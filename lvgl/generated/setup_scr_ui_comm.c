@@ -28,10 +28,10 @@ void setup_scr_ui_comm(lv_ui *ui)
 
     //Write codes ui_comm_list_comm
     ui->ui_comm_list_comm = lv_list_create(ui->ui_comm);
-    ui->ui_comm_list_comm_item0 =lv_list_add_text(ui->ui_comm_list_comm, "CAN1");
-    ui->ui_comm_list_comm_item1 =lv_list_add_text(ui->ui_comm_list_comm, "CAN2");
-    ui->ui_comm_list_comm_item2 =lv_list_add_text(ui->ui_comm_list_comm, "LOG");
-    ui->ui_comm_list_comm_item3 =lv_list_add_text(ui->ui_comm_list_comm, "RC");
+    ui->ui_comm_list_comm_item0 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "CAN1");
+    ui->ui_comm_list_comm_item1 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "CAN2");
+    ui->ui_comm_list_comm_item2 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "LOG");
+    ui->ui_comm_list_comm_item3 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "RC");
     lv_obj_set_pos(ui->ui_comm_list_comm, 5, 40);
     lv_obj_set_size(ui->ui_comm_list_comm, 310, 195);
     lv_obj_set_scrollbar_mode(ui->ui_comm_list_comm, LV_SCROLLBAR_MODE_OFF);
@@ -54,6 +54,44 @@ void setup_scr_ui_comm(lv_ui *ui)
     lv_style_set_radius(&style_ui_comm_list_comm_main_main_default, 3);
     lv_style_set_shadow_width(&style_ui_comm_list_comm_main_main_default, 0);
     lv_obj_add_style(ui->ui_comm_list_comm, &style_ui_comm_list_comm_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+    //Write style state: LV_STATE_FOCUSED for &style_ui_comm_list_comm_main_main_focused
+    static lv_style_t style_ui_comm_list_comm_main_main_focused;
+    ui_init_style(&style_ui_comm_list_comm_main_main_focused);
+
+    lv_style_set_pad_top(&style_ui_comm_list_comm_main_main_focused, 5);
+    lv_style_set_pad_left(&style_ui_comm_list_comm_main_main_focused, 5);
+    lv_style_set_pad_right(&style_ui_comm_list_comm_main_main_focused, 5);
+    lv_style_set_pad_bottom(&style_ui_comm_list_comm_main_main_focused, 5);
+    lv_style_set_bg_opa(&style_ui_comm_list_comm_main_main_focused, 255);
+    lv_style_set_bg_color(&style_ui_comm_list_comm_main_main_focused, lv_color_hex(0xffffff));
+    lv_style_set_bg_grad_dir(&style_ui_comm_list_comm_main_main_focused, LV_GRAD_DIR_NONE);
+    lv_style_set_border_width(&style_ui_comm_list_comm_main_main_focused, 1);
+    lv_style_set_border_opa(&style_ui_comm_list_comm_main_main_focused, 255);
+    lv_style_set_border_color(&style_ui_comm_list_comm_main_main_focused, lv_color_hex(0xe1e6ee));
+    lv_style_set_border_side(&style_ui_comm_list_comm_main_main_focused, LV_BORDER_SIDE_FULL);
+    lv_style_set_radius(&style_ui_comm_list_comm_main_main_focused, 3);
+    lv_style_set_shadow_width(&style_ui_comm_list_comm_main_main_focused, 0);
+    lv_obj_add_style(ui->ui_comm_list_comm, &style_ui_comm_list_comm_main_main_focused, LV_PART_MAIN|LV_STATE_FOCUSED);
+
+    //Write style state: LV_STATE_DISABLED for &style_ui_comm_list_comm_main_main_disabled
+    static lv_style_t style_ui_comm_list_comm_main_main_disabled;
+    ui_init_style(&style_ui_comm_list_comm_main_main_disabled);
+
+    lv_style_set_pad_top(&style_ui_comm_list_comm_main_main_disabled, 5);
+    lv_style_set_pad_left(&style_ui_comm_list_comm_main_main_disabled, 5);
+    lv_style_set_pad_right(&style_ui_comm_list_comm_main_main_disabled, 5);
+    lv_style_set_pad_bottom(&style_ui_comm_list_comm_main_main_disabled, 5);
+    lv_style_set_bg_opa(&style_ui_comm_list_comm_main_main_disabled, 255);
+    lv_style_set_bg_color(&style_ui_comm_list_comm_main_main_disabled, lv_color_hex(0xffffff));
+    lv_style_set_bg_grad_dir(&style_ui_comm_list_comm_main_main_disabled, LV_GRAD_DIR_NONE);
+    lv_style_set_border_width(&style_ui_comm_list_comm_main_main_disabled, 1);
+    lv_style_set_border_opa(&style_ui_comm_list_comm_main_main_disabled, 255);
+    lv_style_set_border_color(&style_ui_comm_list_comm_main_main_disabled, lv_color_hex(0xe1e6ee));
+    lv_style_set_border_side(&style_ui_comm_list_comm_main_main_disabled, LV_BORDER_SIDE_FULL);
+    lv_style_set_radius(&style_ui_comm_list_comm_main_main_disabled, 3);
+    lv_style_set_shadow_width(&style_ui_comm_list_comm_main_main_disabled, 0);
+    lv_obj_add_style(ui->ui_comm_list_comm, &style_ui_comm_list_comm_main_main_disabled, LV_PART_MAIN|LV_STATE_DISABLED);
 
     //Write style state: LV_STATE_DEFAULT for &style_ui_comm_list_comm_main_scrollbar_default
     static lv_style_t style_ui_comm_list_comm_main_scrollbar_default;
@@ -81,40 +119,10 @@ void setup_scr_ui_comm(lv_ui *ui)
     lv_style_set_bg_opa(&style_ui_comm_list_comm_extra_btns_main_default, 255);
     lv_style_set_bg_color(&style_ui_comm_list_comm_extra_btns_main_default, lv_color_hex(0xffffff));
     lv_style_set_bg_grad_dir(&style_ui_comm_list_comm_extra_btns_main_default, LV_GRAD_DIR_NONE);
-
-    //Write style state: LV_STATE_PRESSED for &style_ui_comm_list_comm_extra_btns_main_pressed
-    static lv_style_t style_ui_comm_list_comm_extra_btns_main_pressed;
-    ui_init_style(&style_ui_comm_list_comm_extra_btns_main_pressed);
-
-    lv_style_set_pad_top(&style_ui_comm_list_comm_extra_btns_main_pressed, 5);
-    lv_style_set_pad_left(&style_ui_comm_list_comm_extra_btns_main_pressed, 5);
-    lv_style_set_pad_right(&style_ui_comm_list_comm_extra_btns_main_pressed, 5);
-    lv_style_set_pad_bottom(&style_ui_comm_list_comm_extra_btns_main_pressed, 5);
-    lv_style_set_border_width(&style_ui_comm_list_comm_extra_btns_main_pressed, 0);
-    lv_style_set_radius(&style_ui_comm_list_comm_extra_btns_main_pressed, 3);
-    lv_style_set_text_color(&style_ui_comm_list_comm_extra_btns_main_pressed, lv_color_hex(0x0D3055));
-    lv_style_set_text_font(&style_ui_comm_list_comm_extra_btns_main_pressed, &lv_font_montserratMedium_12);
-    lv_style_set_text_opa(&style_ui_comm_list_comm_extra_btns_main_pressed, 255);
-    lv_style_set_bg_opa(&style_ui_comm_list_comm_extra_btns_main_pressed, 255);
-    lv_style_set_bg_color(&style_ui_comm_list_comm_extra_btns_main_pressed, lv_color_hex(0xffffff));
-    lv_style_set_bg_grad_dir(&style_ui_comm_list_comm_extra_btns_main_pressed, LV_GRAD_DIR_NONE);
-
-    //Write style state: LV_STATE_FOCUSED for &style_ui_comm_list_comm_extra_btns_main_focused
-    static lv_style_t style_ui_comm_list_comm_extra_btns_main_focused;
-    ui_init_style(&style_ui_comm_list_comm_extra_btns_main_focused);
-
-    lv_style_set_pad_top(&style_ui_comm_list_comm_extra_btns_main_focused, 5);
-    lv_style_set_pad_left(&style_ui_comm_list_comm_extra_btns_main_focused, 5);
-    lv_style_set_pad_right(&style_ui_comm_list_comm_extra_btns_main_focused, 5);
-    lv_style_set_pad_bottom(&style_ui_comm_list_comm_extra_btns_main_focused, 5);
-    lv_style_set_border_width(&style_ui_comm_list_comm_extra_btns_main_focused, 0);
-    lv_style_set_radius(&style_ui_comm_list_comm_extra_btns_main_focused, 3);
-    lv_style_set_text_color(&style_ui_comm_list_comm_extra_btns_main_focused, lv_color_hex(0x0D3055));
-    lv_style_set_text_font(&style_ui_comm_list_comm_extra_btns_main_focused, &lv_font_montserratMedium_12);
-    lv_style_set_text_opa(&style_ui_comm_list_comm_extra_btns_main_focused, 255);
-    lv_style_set_bg_opa(&style_ui_comm_list_comm_extra_btns_main_focused, 255);
-    lv_style_set_bg_color(&style_ui_comm_list_comm_extra_btns_main_focused, lv_color_hex(0xffffff));
-    lv_style_set_bg_grad_dir(&style_ui_comm_list_comm_extra_btns_main_focused, LV_GRAD_DIR_NONE);
+    lv_obj_add_style(ui->ui_comm_list_comm_item3, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_add_style(ui->ui_comm_list_comm_item2, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_add_style(ui->ui_comm_list_comm_item1, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_add_style(ui->ui_comm_list_comm_item0, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write style state: LV_STATE_DEFAULT for &style_ui_comm_list_comm_extra_texts_main_default
     static lv_style_t style_ui_comm_list_comm_extra_texts_main_default;
@@ -133,10 +141,6 @@ void setup_scr_ui_comm(lv_ui *ui)
     lv_style_set_bg_opa(&style_ui_comm_list_comm_extra_texts_main_default, 255);
     lv_style_set_bg_color(&style_ui_comm_list_comm_extra_texts_main_default, lv_color_hex(0xffffff));
     lv_style_set_bg_grad_dir(&style_ui_comm_list_comm_extra_texts_main_default, LV_GRAD_DIR_NONE);
-    lv_obj_add_style(ui->ui_comm_list_comm_item3, &style_ui_comm_list_comm_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->ui_comm_list_comm_item2, &style_ui_comm_list_comm_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->ui_comm_list_comm_item1, &style_ui_comm_list_comm_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_add_style(ui->ui_comm_list_comm_item0, &style_ui_comm_list_comm_extra_texts_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
     //Write codes ui_comm_label_title
     ui->ui_comm_label_title = lv_label_create(ui->ui_comm);

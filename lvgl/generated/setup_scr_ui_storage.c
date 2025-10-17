@@ -61,6 +61,44 @@ void setup_scr_ui_storage(lv_ui *ui)
     lv_style_set_shadow_width(&style_ui_storage_list_files_main_main_default, 0);
     lv_obj_add_style(ui->ui_storage_list_files, &style_ui_storage_list_files_main_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+    //Write style state: LV_STATE_FOCUSED for &style_ui_storage_list_files_main_main_focused
+    static lv_style_t style_ui_storage_list_files_main_main_focused;
+    ui_init_style(&style_ui_storage_list_files_main_main_focused);
+
+    lv_style_set_pad_top(&style_ui_storage_list_files_main_main_focused, 5);
+    lv_style_set_pad_left(&style_ui_storage_list_files_main_main_focused, 5);
+    lv_style_set_pad_right(&style_ui_storage_list_files_main_main_focused, 5);
+    lv_style_set_pad_bottom(&style_ui_storage_list_files_main_main_focused, 5);
+    lv_style_set_bg_opa(&style_ui_storage_list_files_main_main_focused, 255);
+    lv_style_set_bg_color(&style_ui_storage_list_files_main_main_focused, lv_color_hex(0xffffff));
+    lv_style_set_bg_grad_dir(&style_ui_storage_list_files_main_main_focused, LV_GRAD_DIR_NONE);
+    lv_style_set_border_width(&style_ui_storage_list_files_main_main_focused, 1);
+    lv_style_set_border_opa(&style_ui_storage_list_files_main_main_focused, 255);
+    lv_style_set_border_color(&style_ui_storage_list_files_main_main_focused, lv_color_hex(0xe1e6ee));
+    lv_style_set_border_side(&style_ui_storage_list_files_main_main_focused, LV_BORDER_SIDE_FULL);
+    lv_style_set_radius(&style_ui_storage_list_files_main_main_focused, 3);
+    lv_style_set_shadow_width(&style_ui_storage_list_files_main_main_focused, 0);
+    lv_obj_add_style(ui->ui_storage_list_files, &style_ui_storage_list_files_main_main_focused, LV_PART_MAIN|LV_STATE_FOCUSED);
+
+    //Write style state: LV_STATE_DISABLED for &style_ui_storage_list_files_main_main_disabled
+    static lv_style_t style_ui_storage_list_files_main_main_disabled;
+    ui_init_style(&style_ui_storage_list_files_main_main_disabled);
+
+    lv_style_set_pad_top(&style_ui_storage_list_files_main_main_disabled, 5);
+    lv_style_set_pad_left(&style_ui_storage_list_files_main_main_disabled, 5);
+    lv_style_set_pad_right(&style_ui_storage_list_files_main_main_disabled, 5);
+    lv_style_set_pad_bottom(&style_ui_storage_list_files_main_main_disabled, 5);
+    lv_style_set_bg_opa(&style_ui_storage_list_files_main_main_disabled, 255);
+    lv_style_set_bg_color(&style_ui_storage_list_files_main_main_disabled, lv_color_hex(0xffffff));
+    lv_style_set_bg_grad_dir(&style_ui_storage_list_files_main_main_disabled, LV_GRAD_DIR_NONE);
+    lv_style_set_border_width(&style_ui_storage_list_files_main_main_disabled, 1);
+    lv_style_set_border_opa(&style_ui_storage_list_files_main_main_disabled, 255);
+    lv_style_set_border_color(&style_ui_storage_list_files_main_main_disabled, lv_color_hex(0xe1e6ee));
+    lv_style_set_border_side(&style_ui_storage_list_files_main_main_disabled, LV_BORDER_SIDE_FULL);
+    lv_style_set_radius(&style_ui_storage_list_files_main_main_disabled, 3);
+    lv_style_set_shadow_width(&style_ui_storage_list_files_main_main_disabled, 0);
+    lv_obj_add_style(ui->ui_storage_list_files, &style_ui_storage_list_files_main_main_disabled, LV_PART_MAIN|LV_STATE_DISABLED);
+
     //Write style state: LV_STATE_DEFAULT for &style_ui_storage_list_files_main_scrollbar_default
     static lv_style_t style_ui_storage_list_files_main_scrollbar_default;
     ui_init_style(&style_ui_storage_list_files_main_scrollbar_default);

@@ -196,9 +196,9 @@ static void ui_comm_list_comm_item3_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_PRESSED:
     {
-        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_RC, guider_ui.ui_comm_RC_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_RC, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_RC, guider_ui.ui_comm_RC_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_RC, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 200, 0, false, true);
         break;
     }
     default:

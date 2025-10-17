@@ -102,7 +102,7 @@ void setup_scr_ui_led(lv_ui *ui)
 
     //Write codes ui_led_cb_sta
     ui->ui_led_cb_sta = lv_checkbox_create(ui->ui_led);
-    lv_checkbox_set_text(ui->ui_led_cb_sta, "LED  ON");
+    lv_checkbox_set_text(ui->ui_led_cb_sta, "LED ON");
     lv_obj_set_pos(ui->ui_led_cb_sta, 10, 80);
 
     //Write style for ui_led_cb_sta, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.

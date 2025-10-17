@@ -70,10 +70,42 @@ typedef struct
 	lv_obj_t *ui_comm_btn_home_label;
 	lv_obj_t *ui_comm_RC;
 	bool ui_comm_RC_del;
-	lv_obj_t *ui_comm_RC_table_1;
 	lv_obj_t *ui_comm_RC_label_tittle;
 	lv_obj_t *ui_comm_RC_btn_back;
 	lv_obj_t *ui_comm_RC_btn_back_label;
+	lv_obj_t *ui_comm_RC_cont_1;
+	lv_obj_t *ui_comm_RC_label_1;
+	lv_obj_t *ui_comm_RC_label_2;
+	lv_obj_t *ui_comm_RC_label_3;
+	lv_obj_t *ui_comm_RC_label_4;
+	lv_obj_t *ui_comm_RC_label_5;
+	lv_obj_t *ui_comm_RC_label_6;
+	lv_obj_t *ui_comm_RC_label_7;
+	lv_obj_t *ui_comm_RC_label_8;
+	lv_obj_t *ui_comm_RC_label_9;
+	lv_obj_t *ui_comm_RC_label_10;
+	lv_obj_t *ui_comm_RC_label_11;
+	lv_obj_t *ui_comm_RC_label_12;
+	lv_obj_t *ui_comm_RC_label_13;
+	lv_obj_t *ui_comm_RC_label_14;
+	lv_obj_t *ui_comm_RC_label_15;
+	lv_obj_t *ui_comm_RC_label_16;
+	lv_obj_t *ui_comm_RC_bar_1;
+	lv_obj_t *ui_comm_RC_bar_2;
+	lv_obj_t *ui_comm_RC_bar_3;
+	lv_obj_t *ui_comm_RC_bar_4;
+	lv_obj_t *ui_comm_RC_bar_5;
+	lv_obj_t *ui_comm_RC_bar_6;
+	lv_obj_t *ui_comm_RC_bar_7;
+	lv_obj_t *ui_comm_RC_bar_8;
+	lv_obj_t *ui_comm_RC_bar_9;
+	lv_obj_t *ui_comm_RC_bar_10;
+	lv_obj_t *ui_comm_RC_bar_11;
+	lv_obj_t *ui_comm_RC_bar_12;
+	lv_obj_t *ui_comm_RC_bar_13;
+	lv_obj_t *ui_comm_RC_bar_14;
+	lv_obj_t *ui_comm_RC_bar_15;
+	lv_obj_t *ui_comm_RC_bar_16;
 	lv_obj_t *ui_IO;
 	bool ui_IO_del;
 	lv_obj_t *ui_IO_label_title;
@@ -121,7 +153,6 @@ void setup_scr_ui_IO(lv_ui *ui);
 void setup_scr_ui_led(lv_ui *ui);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
-LV_FONT_DECLARE(lv_font_montserratMedium_12)
 
 
 #ifdef __cplusplus
