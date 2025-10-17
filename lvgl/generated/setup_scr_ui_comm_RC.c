@@ -465,8 +465,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_1 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_1, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_1, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_1, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_1, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_1, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_1, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_1, 80, 10);
     lv_obj_set_size(ui->ui_comm_RC_bar_1, 200, 16);
 
@@ -487,8 +487,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_2 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_2, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_2, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_2, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_2, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_2, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_2, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_2, 80, 40);
     lv_obj_set_size(ui->ui_comm_RC_bar_2, 200, 16);
 
@@ -509,8 +509,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_3 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_3, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_3, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_3, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_3, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_3, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_3, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_3, 80, 70);
     lv_obj_set_size(ui->ui_comm_RC_bar_3, 200, 16);
 
@@ -531,8 +531,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_4 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_4, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_4, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_4, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_4, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_4, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_4, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_4, 80, 100);
     lv_obj_set_size(ui->ui_comm_RC_bar_4, 200, 16);
 
@@ -553,8 +553,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_5 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_5, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_5, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_5, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_5, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_5, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_5, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_5, 80, 130);
     lv_obj_set_size(ui->ui_comm_RC_bar_5, 200, 16);
 
@@ -575,8 +575,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_6 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_6, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_6, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_6, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_6, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_6, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_6, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_6, 80, 160);
     lv_obj_set_size(ui->ui_comm_RC_bar_6, 200, 16);
 
@@ -597,8 +597,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_7 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_7, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_7, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_7, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_7, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_7, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_7, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_7, 80, 190);
     lv_obj_set_size(ui->ui_comm_RC_bar_7, 200, 16);
 
@@ -619,8 +619,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_8 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_8, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_8, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_8, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_8, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_8, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_8, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_8, 80, 220);
     lv_obj_set_size(ui->ui_comm_RC_bar_8, 200, 16);
 
@@ -641,8 +641,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_9 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_9, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_9, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_9, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_9, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_9, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_9, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_9, 80, 250);
     lv_obj_set_size(ui->ui_comm_RC_bar_9, 200, 16);
 
@@ -663,8 +663,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_10 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_10, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_10, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_10, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_10, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_10, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_10, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_10, 80, 280);
     lv_obj_set_size(ui->ui_comm_RC_bar_10, 200, 16);
 
@@ -685,8 +685,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_11 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_11, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_11, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_11, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_11, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_11, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_11, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_11, 80, 310);
     lv_obj_set_size(ui->ui_comm_RC_bar_11, 200, 16);
 
@@ -707,8 +707,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_12 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_12, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_12, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_12, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_12, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_12, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_12, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_12, 80, 340);
     lv_obj_set_size(ui->ui_comm_RC_bar_12, 200, 16);
 
@@ -729,8 +729,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_13 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_13, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_13, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_13, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_13, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_13, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_13, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_13, 80, 370);
     lv_obj_set_size(ui->ui_comm_RC_bar_13, 200, 16);
 
@@ -751,8 +751,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_14 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_14, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_14, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_14, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_14, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_14, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_14, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_14, 80, 400);
     lv_obj_set_size(ui->ui_comm_RC_bar_14, 200, 16);
 
@@ -773,8 +773,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_15 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_15, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_15, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_15, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_15, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_15, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_15, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_15, 80, 430);
     lv_obj_set_size(ui->ui_comm_RC_bar_15, 200, 16);
 
@@ -795,8 +795,8 @@ void setup_scr_ui_comm_RC(lv_ui *ui)
     ui->ui_comm_RC_bar_16 = lv_bar_create(ui->ui_comm_RC_cont_1);
     lv_obj_set_style_anim_time(ui->ui_comm_RC_bar_16, 1000, 0);
     lv_bar_set_mode(ui->ui_comm_RC_bar_16, LV_BAR_MODE_NORMAL);
-    lv_bar_set_range(ui->ui_comm_RC_bar_16, 0, 100);
-    lv_bar_set_value(ui->ui_comm_RC_bar_16, 50, LV_ANIM_OFF);
+    lv_bar_set_range(ui->ui_comm_RC_bar_16, 200, 1800);
+    lv_bar_set_value(ui->ui_comm_RC_bar_16, 200, LV_ANIM_OFF);
     lv_obj_set_pos(ui->ui_comm_RC_bar_16, 80, 460);
     lv_obj_set_size(ui->ui_comm_RC_bar_16, 200, 16);
 

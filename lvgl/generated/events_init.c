@@ -15,6 +15,36 @@
 #include "freemaster_client.h"
 #endif
 
+#include <stdlib.h>
+#include <time.h>
+
+static uint16_t ui_comm_rc_data[16] = {500, 500, 500, 500, 500, 500, 500, 500,
+                                       500, 500, 500, 500, 500, 500, 500, 500
+                                      };
+static lv_timer_t *rc_update_timer = NULL;
+
+// 获取 Bar 对象的辅助函数
+static lv_obj_t* get_rc_bar(lv_ui *ui, int index)
+{
+    lv_obj_t *bars[] = {
+        ui->ui_comm_RC_bar_1, ui->ui_comm_RC_bar_2, ui->ui_comm_RC_bar_3, ui->ui_comm_RC_bar_4,
+        ui->ui_comm_RC_bar_5, ui->ui_comm_RC_bar_6, ui->ui_comm_RC_bar_7, ui->ui_comm_RC_bar_8,
+        ui->ui_comm_RC_bar_9, ui->ui_comm_RC_bar_10, ui->ui_comm_RC_bar_11, ui->ui_comm_RC_bar_12,
+        ui->ui_comm_RC_bar_13, ui->ui_comm_RC_bar_14, ui->ui_comm_RC_bar_15, ui->ui_comm_RC_bar_16
+    };
+    return (index >= 0 && index < 16) ? bars[index] : NULL;
+}
+
+// 定时器回调
+static void rc_timer_callback(lv_timer_t *timer)
+{
+    lv_ui *ui = (lv_ui *)timer->user_data;
+
+    for(int i = 0; i < 16; i++) {
+        ui_comm_rc_data[i] = 200 + (rand() % 1601);  // [0-1800]
+        lv_bar_set_value(get_rc_bar(ui, i), ui_comm_rc_data[i], LV_ANIM_ON);
+    }
+}
 static uint32_t ui_led_slider_period_val = 500;
 static bool ui_led_cb_blink_checked = 0;
 static bool ui_led_cb_sta_checked = 0;
@@ -226,6 +256,35 @@ void events_init_ui_comm (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_comm_btn_home, ui_comm_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
+static void ui_comm_RC_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_SCREEN_LOAD_START:
+    {
+        srand(lv_tick_get());
+
+        // 加载旧值
+        for(int i = 0; i < 16; i++) {
+            lv_bar_set_value(get_rc_bar(&guider_ui, i), ui_comm_rc_data[i], LV_ANIM_OFF);
+        }
+
+        // 创建定时器
+        if(rc_update_timer == NULL) {
+            rc_update_timer = lv_timer_create(rc_timer_callback, 3000, &guider_ui);
+        }
+        break;
+    }
+    case LV_EVENT_SCREEN_UNLOADED:
+    {
+
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 static void ui_comm_RC_btn_back_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -242,6 +301,7 @@ static void ui_comm_RC_btn_back_event_handler (lv_event_t *e)
 
 void events_init_ui_comm_RC (lv_ui *ui)
 {
+    lv_obj_add_event_cb(ui->ui_comm_RC, ui_comm_RC_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_RC_btn_back, ui_comm_RC_btn_back_event_handler, LV_EVENT_ALL, ui);
 }
 
