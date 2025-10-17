@@ -86,6 +86,10 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     src/lite_lib/cJSON
 
     src/hal
+
+    lvgl-export/src/custom
+    lvgl-export/src/generated
+    lvgl-export/src/generated/guider_customer_fonts
 )
 
 # Add project symbols (macros)

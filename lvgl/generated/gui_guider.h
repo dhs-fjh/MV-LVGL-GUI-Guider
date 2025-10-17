@@ -68,6 +68,12 @@ typedef struct
 	lv_obj_t *ui_comm_label_title;
 	lv_obj_t *ui_comm_btn_home;
 	lv_obj_t *ui_comm_btn_home_label;
+	lv_obj_t *ui_comm_RC;
+	bool ui_comm_RC_del;
+	lv_obj_t *ui_comm_RC_table_1;
+	lv_obj_t *ui_comm_RC_label_tittle;
+	lv_obj_t *ui_comm_RC_btn_back;
+	lv_obj_t *ui_comm_RC_btn_back_label;
 	lv_obj_t *ui_IO;
 	bool ui_IO_del;
 	lv_obj_t *ui_IO_label_title;
@@ -110,10 +116,12 @@ void setup_scr_ui_main(lv_ui *ui);
 void setup_scr_ui_settings(lv_ui *ui);
 void setup_scr_ui_storage(lv_ui *ui);
 void setup_scr_ui_comm(lv_ui *ui);
+void setup_scr_ui_comm_RC(lv_ui *ui);
 void setup_scr_ui_IO(lv_ui *ui);
 void setup_scr_ui_led(lv_ui *ui);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
 
 
 #ifdef __cplusplus

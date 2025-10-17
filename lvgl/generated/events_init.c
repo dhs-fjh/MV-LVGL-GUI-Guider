@@ -192,6 +192,20 @@ void events_init_ui_storage (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_storage_btn_home, ui_storage_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
+static void ui_comm_list_comm_item3_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_CLICKED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_RC, guider_ui.ui_comm_RC_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_RC, LV_SCR_LOAD_ANIM_NONE, 200, 200, false, true);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 static void ui_comm_btn_home_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -208,7 +222,27 @@ static void ui_comm_btn_home_event_handler (lv_event_t *e)
 
 void events_init_ui_comm (lv_ui *ui)
 {
+    lv_obj_add_event_cb(ui->ui_comm_list_comm_item3, ui_comm_list_comm_item3_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_btn_home, ui_comm_btn_home_event_handler, LV_EVENT_ALL, ui);
+}
+
+static void ui_comm_RC_btn_back_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm, guider_ui.ui_comm_del, &guider_ui.ui_comm_RC_del, setup_scr_ui_comm, LV_SCR_LOAD_ANIM_MOVE_TOP, 200, 0, false, true);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+void events_init_ui_comm_RC (lv_ui *ui)
+{
+    lv_obj_add_event_cb(ui->ui_comm_RC_btn_back, ui_comm_RC_btn_back_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void ui_IO_btn_home_event_handler (lv_event_t *e)
