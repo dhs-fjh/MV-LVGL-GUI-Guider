@@ -45,11 +45,47 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    # app
+    Core/app/app.c
+
+
+    # drivers
+    src/drivers/comm/driver_log.c
+
+    src/drivers/device/driver_led.c
+
+    src/drivers/fs/driver_sd_fs.c
+
+    src/drivers/display/lcd_ili9341.c
+
+    src/drivers/touch/touch_xpt2046.c
+
+    src/lite_lib/cJSON/cJSON.c
+
+    # hal
+    src/hal/hal_delay.c
+    src/hal/hal_uart.c
+    src/hal/hal_gpio.c
+
+    src/hal/hal_spi_sw.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
+    Core/app
+    Core/config
+    Core/ui
+
+    src/drivers/comm
+    src/drivers/device
+    src/drivers/display
+    src/drivers/touch
+    src/drivers/fs
+
+    src/lite_lib/cJSON
+
+    src/hal
 )
 
 # Add project symbols (macros)

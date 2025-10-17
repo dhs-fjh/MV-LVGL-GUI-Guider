@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "app.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,7 +95,7 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+  app_sys_init();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -147,10 +147,13 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
+  UNUSED(argument);
+  app_default_task();
+  osThreadExit();
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(osWaitForever);
   }
   /* USER CODE END StartDefaultTask */
 }
@@ -165,10 +168,13 @@ void StartDefaultTask(void *argument)
 void os_led_task(void *argument)
 {
   /* USER CODE BEGIN os_led_task */
+  UNUSED(argument);
+  app_led_task();
+  osThreadExit();
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(osWaitForever);
   }
   /* USER CODE END os_led_task */
 }
@@ -184,9 +190,13 @@ void os_log_task(void *argument)
 {
   /* USER CODE BEGIN os_log_task */
   /* Infinite loop */
+  UNUSED(argument);
+  app_log_task();
+  osThreadExit();
+  /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(osWaitForever);
   }
   /* USER CODE END os_log_task */
 }
@@ -202,9 +212,13 @@ void os_lvgl_task(void *argument)
 {
   /* USER CODE BEGIN os_lvgl_task */
   /* Infinite loop */
+  UNUSED(argument);
+  app_sd_task();
+  osThreadExit();
+  /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    osDelay(osWaitForever);
   }
   /* USER CODE END os_lvgl_task */
 }
