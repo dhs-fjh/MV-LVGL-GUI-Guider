@@ -27,10 +27,10 @@ static lv_timer_t *rc_update_timer = NULL;
 static lv_obj_t* get_rc_bar(lv_ui *ui, int index)
 {
     lv_obj_t *bars[] = {
-        ui->ui_comm_RC_bar_1, ui->ui_comm_RC_bar_2, ui->ui_comm_RC_bar_3, ui->ui_comm_RC_bar_4,
-        ui->ui_comm_RC_bar_5, ui->ui_comm_RC_bar_6, ui->ui_comm_RC_bar_7, ui->ui_comm_RC_bar_8,
-        ui->ui_comm_RC_bar_9, ui->ui_comm_RC_bar_10, ui->ui_comm_RC_bar_11, ui->ui_comm_RC_bar_12,
-        ui->ui_comm_RC_bar_13, ui->ui_comm_RC_bar_14, ui->ui_comm_RC_bar_15, ui->ui_comm_RC_bar_16
+        ui->ui_comm_rc_bar_1, ui->ui_comm_rc_bar_2, ui->ui_comm_rc_bar_3, ui->ui_comm_rc_bar_4,
+        ui->ui_comm_rc_bar_5, ui->ui_comm_rc_bar_6, ui->ui_comm_rc_bar_7, ui->ui_comm_rc_bar_8,
+        ui->ui_comm_rc_bar_9, ui->ui_comm_rc_bar_10, ui->ui_comm_rc_bar_11, ui->ui_comm_rc_bar_12,
+        ui->ui_comm_rc_bar_13, ui->ui_comm_rc_bar_14, ui->ui_comm_rc_bar_15, ui->ui_comm_rc_bar_16
     };
     return (index >= 0 && index < 16) ? bars[index] : NULL;
 }
@@ -228,7 +228,7 @@ static void ui_comm_list_comm_item3_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_PRESSED:
     {
-        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_RC, guider_ui.ui_comm_RC_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_RC, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 200, 0, false, true);
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_rc, guider_ui.ui_comm_rc_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_rc, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 200, 0, false, true);
         break;
     }
     default:
@@ -256,7 +256,7 @@ void events_init_ui_comm (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_comm_btn_home, ui_comm_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
-static void ui_comm_RC_event_handler (lv_event_t *e)
+static void ui_comm_rc_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
@@ -277,7 +277,11 @@ static void ui_comm_RC_event_handler (lv_event_t *e)
     }
     case LV_EVENT_SCREEN_UNLOADED:
     {
-
+        // 删除定时器
+        if(rc_update_timer != NULL) {
+            lv_timer_del(rc_update_timer);
+            rc_update_timer = NULL;
+        }
         break;
     }
     default:
@@ -285,13 +289,13 @@ static void ui_comm_RC_event_handler (lv_event_t *e)
     }
 }
 
-static void ui_comm_RC_btn_back_event_handler (lv_event_t *e)
+static void ui_comm_rc_btn_back_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
     case LV_EVENT_PRESSED:
     {
-        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm, guider_ui.ui_comm_del, &guider_ui.ui_comm_RC_del, setup_scr_ui_comm, LV_SCR_LOAD_ANIM_MOVE_TOP, 200, 0, false, true);
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm, guider_ui.ui_comm_del, &guider_ui.ui_comm_rc_del, setup_scr_ui_comm, LV_SCR_LOAD_ANIM_MOVE_TOP, 200, 0, false, true);
         break;
     }
     default:
@@ -299,10 +303,10 @@ static void ui_comm_RC_btn_back_event_handler (lv_event_t *e)
     }
 }
 
-void events_init_ui_comm_RC (lv_ui *ui)
+void events_init_ui_comm_rc (lv_ui *ui)
 {
-    lv_obj_add_event_cb(ui->ui_comm_RC, ui_comm_RC_event_handler, LV_EVENT_ALL, ui);
-    lv_obj_add_event_cb(ui->ui_comm_RC_btn_back, ui_comm_RC_btn_back_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_rc, ui_comm_rc_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_rc_btn_back, ui_comm_rc_btn_back_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void ui_IO_btn_home_event_handler (lv_event_t *e)

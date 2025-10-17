@@ -247,9 +247,9 @@
 		"LV_MEM_AUTO_DEFRAG": true,
 		"LV_MEM_CUSTOM_FREE": "free",
 		"LV_USE_GPU_NXP_PXP": "~~",
-		"LV_USE_MEM_MONITOR": false,
+		"LV_USE_MEM_MONITOR": true,
 		"LV_MEM_CUSTOM_ALLOC": "malloc",
-		"LV_USE_PERF_MONITOR": false,
+		"LV_USE_PERF_MONITOR": true,
 		"LV_MEM_CUSTOM_INCLUDE": "<stdlib.h>",
 		"LV_ATTRIBUTE_MEM_ALIGN": "~~",
 		"LV_USE_GPU_NXP_VG_LITE": "~~",
@@ -3675,7 +3675,7 @@
 			"layerName": "ui_comm"
 		},
 		{
-			"name": "ui_comm_RC",
+			"name": "ui_comm_rc",
 			"id": "y3vfiz6s",
 			"type": "scr",
 			"version": 190,
@@ -3754,10 +3754,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -3819,10 +3819,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -3884,10 +3884,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -3949,10 +3949,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4014,10 +4014,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4079,10 +4079,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4144,10 +4144,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4209,10 +4209,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4274,10 +4274,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4341,8 +4341,8 @@
 							"animtime": 1000,
 							"bar_value": 50,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4404,10 +4404,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4469,10 +4469,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4534,10 +4534,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 0,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4599,10 +4599,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 200,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4664,10 +4664,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 200,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -4729,10 +4729,10 @@
 							"height": 16,
 							"default_style": false,
 							"animtime": 1000,
-							"bar_value": 50,
+							"bar_value": 200,
 							"bar_start_value": 30,
-							"range_s": 0,
-							"range_e": 100,
+							"range_s": 200,
+							"range_e": 1800,
 							"anim": false,
 							"mode": "LV_BAR_MODE_NORMAL",
 							"attribute_type": "freemaster",
@@ -6691,7 +6691,44 @@
 					]
 				}
 			],
-			"event": {},
+			"event": {
+				"widget": {
+					"screen_load_start": {
+						"condition": [],
+						"action": [
+							{
+								"dst": "custom_code",
+								"bindCondi": "",
+								"actionList": {
+									"custom_code": {
+										"inc_c": "#include <stdlib.h>\r\n#include <time.h>\r\n\r\nstatic uint16_t ui_comm_rc_data[16] = {500, 500, 500, 500, 500, 500, 500, 500,\r\n                                        500, 500, 500, 500, 500, 500, 500, 500};\r\nstatic lv_timer_t *rc_update_timer = NULL;\r\n\r\n// 获取 Bar 对象的辅助函数\r\nstatic lv_obj_t* get_rc_bar(lv_ui *ui, int index)\r\n{\r\n    lv_obj_t *bars[] = {\r\n        ui->ui_comm_rc_bar_1, ui->ui_comm_rc_bar_2, ui->ui_comm_rc_bar_3, ui->ui_comm_rc_bar_4,\r\n        ui->ui_comm_rc_bar_5, ui->ui_comm_rc_bar_6, ui->ui_comm_rc_bar_7, ui->ui_comm_rc_bar_8,\r\n        ui->ui_comm_rc_bar_9, ui->ui_comm_rc_bar_10, ui->ui_comm_rc_bar_11, ui->ui_comm_rc_bar_12,\r\n        ui->ui_comm_rc_bar_13, ui->ui_comm_rc_bar_14, ui->ui_comm_rc_bar_15, ui->ui_comm_rc_bar_16\r\n    };\r\n    return (index >= 0 && index < 16) ? bars[index] : NULL;\r\n}\r\n\r\n// 定时器回调\r\nstatic void rc_timer_callback(lv_timer_t *timer)\r\n{\r\n    lv_ui *ui = (lv_ui *)timer->user_data;\r\n    \r\n    for(int i = 0; i < 16; i++) {\r\n        ui_comm_rc_data[i] = 200 + (rand() % 1601);  // [0-1800]\r\n        lv_bar_set_value(get_rc_bar(ui, i), ui_comm_rc_data[i], LV_ANIM_ON);\r\n    }\r\n}",
+										"code_c": "srand(lv_tick_get());\r\n\r\n// 加载旧值\r\nfor(int i = 0; i < 16; i++) {\r\n    lv_bar_set_value(get_rc_bar(&guider_ui, i), ui_comm_rc_data[i], LV_ANIM_OFF);\r\n}\r\n\r\n// 创建定时器\r\nif(rc_update_timer == NULL) {\r\n    rc_update_timer = lv_timer_create(rc_timer_callback, 3000, &guider_ui);\r\n}",
+										"inc_py": "",
+										"code_py": ""
+									}
+								}
+							}
+						]
+					},
+					"screen_unloaded": {
+						"condition": [],
+						"action": [
+							{
+								"dst": "custom_code",
+								"bindCondi": "",
+								"actionList": {
+									"custom_code": {
+										"inc_c": "",
+										"code_c": "// 删除定时器\r\nif(rc_update_timer != NULL) {\r\n    lv_timer_del(rc_update_timer);\r\n    rc_update_timer = NULL;\r\n}",
+										"inc_py": "",
+										"code_py": "// 删除定时器\r\nif(rc_update_timer != NULL) {\r\n    lv_timer_del(rc_update_timer);\r\n    rc_update_timer = NULL;\r\n}"
+									}
+								}
+							}
+						]
+					}
+				}
+			},
 			"style": [
 				{
 					"part": "LV_PART_MAIN",
@@ -6710,7 +6747,7 @@
 					"bg_img_recolor_opa": 0
 				}
 			],
-			"layerName": "ui_comm_RC"
+			"layerName": "ui_comm_rc"
 		},
 		{
 			"name": "ui_IO",
@@ -17721,7 +17758,7 @@
 									"condition": [],
 									"action": [
 										{
-											"dst": "ui_comm_RC",
+											"dst": "ui_comm_rc",
 											"bindCondi": "",
 											"actionList": {
 												"load_screen": {
@@ -17735,7 +17772,7 @@
 											},
 											"dst_type": "scr",
 											"_target": {
-												"name": "ui_comm_RC",
+												"name": "ui_comm_rc",
 												"id": "y3vfiz6s",
 												"type": "scr",
 												"version": 190,
@@ -17814,10 +17851,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -17879,10 +17916,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -17944,10 +17981,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18009,10 +18046,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18074,10 +18111,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18139,10 +18176,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18204,10 +18241,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18269,10 +18306,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18334,10 +18371,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18401,8 +18438,8 @@
 																"animtime": 1000,
 																"bar_value": 50,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18464,10 +18501,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18529,10 +18566,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18594,10 +18631,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 0,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18659,10 +18696,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 200,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18724,10 +18761,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 200,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -18789,10 +18826,10 @@
 																"height": 16,
 																"default_style": false,
 																"animtime": 1000,
-																"bar_value": 50,
+																"bar_value": 200,
 																"bar_start_value": 30,
-																"range_s": 0,
-																"range_e": 100,
+																"range_s": 200,
+																"range_e": 1800,
 																"anim": false,
 																"mode": "LV_BAR_MODE_NORMAL",
 																"attribute_type": "freemaster",
@@ -20751,7 +20788,44 @@
 														]
 													}
 												],
-												"event": {},
+												"event": {
+													"widget": {
+														"screen_load_start": {
+															"condition": [],
+															"action": [
+																{
+																	"dst": "custom_code",
+																	"bindCondi": "",
+																	"actionList": {
+																		"custom_code": {
+																			"inc_c": "#include <stdlib.h>\r\n#include <time.h>\r\n\r\nstatic uint16_t ui_comm_rc_data[16] = {500, 500, 500, 500, 500, 500, 500, 500,\r\n                                        500, 500, 500, 500, 500, 500, 500, 500};\r\nstatic lv_timer_t *rc_update_timer = NULL;\r\n\r\n// 获取 Bar 对象的辅助函数\r\nstatic lv_obj_t* get_rc_bar(lv_ui *ui, int index)\r\n{\r\n    lv_obj_t *bars[] = {\r\n        ui->ui_comm_rc_bar_1, ui->ui_comm_rc_bar_2, ui->ui_comm_rc_bar_3, ui->ui_comm_rc_bar_4,\r\n        ui->ui_comm_rc_bar_5, ui->ui_comm_rc_bar_6, ui->ui_comm_rc_bar_7, ui->ui_comm_rc_bar_8,\r\n        ui->ui_comm_rc_bar_9, ui->ui_comm_rc_bar_10, ui->ui_comm_rc_bar_11, ui->ui_comm_rc_bar_12,\r\n        ui->ui_comm_rc_bar_13, ui->ui_comm_rc_bar_14, ui->ui_comm_rc_bar_15, ui->ui_comm_rc_bar_16\r\n    };\r\n    return (index >= 0 && index < 16) ? bars[index] : NULL;\r\n}\r\n\r\n// 定时器回调\r\nstatic void rc_timer_callback(lv_timer_t *timer)\r\n{\r\n    lv_ui *ui = (lv_ui *)timer->user_data;\r\n    \r\n    for(int i = 0; i < 16; i++) {\r\n        ui_comm_rc_data[i] = 200 + (rand() % 1601);  // [0-1800]\r\n        lv_bar_set_value(get_rc_bar(ui, i), ui_comm_rc_data[i], LV_ANIM_ON);\r\n    }\r\n}",
+																			"code_c": "srand(lv_tick_get());\r\n\r\n// 加载旧值\r\nfor(int i = 0; i < 16; i++) {\r\n    lv_bar_set_value(get_rc_bar(&guider_ui, i), ui_comm_rc_data[i], LV_ANIM_OFF);\r\n}\r\n\r\n// 创建定时器\r\nif(rc_update_timer == NULL) {\r\n    rc_update_timer = lv_timer_create(rc_timer_callback, 3000, &guider_ui);\r\n}",
+																			"inc_py": "",
+																			"code_py": ""
+																		}
+																	}
+																}
+															]
+														},
+														"screen_unloaded": {
+															"condition": [],
+															"action": [
+																{
+																	"dst": "custom_code",
+																	"bindCondi": "",
+																	"actionList": {
+																		"custom_code": {
+																			"inc_c": "",
+																			"code_c": "// 删除定时器\r\nif(rc_update_timer != NULL) {\r\n    lv_timer_del(rc_update_timer);\r\n    rc_update_timer = NULL;\r\n}",
+																			"inc_py": "",
+																			"code_py": "// 删除定时器\r\nif(rc_update_timer != NULL) {\r\n    lv_timer_del(rc_update_timer);\r\n    rc_update_timer = NULL;\r\n}"
+																		}
+																	}
+																}
+															]
+														}
+													}
+												},
 												"style": [
 													{
 														"part": "LV_PART_MAIN",
@@ -20770,7 +20844,7 @@
 														"bg_img_recolor_opa": 0
 													}
 												],
-												"layerName": "ui_comm_RC"
+												"layerName": "ui_comm_rc"
 											}
 										}
 									]
@@ -22636,7 +22710,7 @@
 				]
 			},
 			{
-				"name": "ui_comm_RC",
+				"name": "ui_comm_rc",
 				"id": "y3vfiz6s",
 				"type": "scr",
 				"version": 190,
@@ -22652,7 +22726,44 @@
 				"height": 240,
 				"visible": true,
 				"flag": [],
-				"event": {},
+				"event": {
+					"widget": {
+						"screen_load_start": {
+							"condition": [],
+							"action": [
+								{
+									"dst": "custom_code",
+									"bindCondi": "",
+									"actionList": {
+										"custom_code": {
+											"inc_c": "#include <stdlib.h>\r\n#include <time.h>\r\n\r\nstatic uint16_t ui_comm_rc_data[16] = {500, 500, 500, 500, 500, 500, 500, 500,\r\n                                        500, 500, 500, 500, 500, 500, 500, 500};\r\nstatic lv_timer_t *rc_update_timer = NULL;\r\n\r\n// 获取 Bar 对象的辅助函数\r\nstatic lv_obj_t* get_rc_bar(lv_ui *ui, int index)\r\n{\r\n    lv_obj_t *bars[] = {\r\n        ui->ui_comm_rc_bar_1, ui->ui_comm_rc_bar_2, ui->ui_comm_rc_bar_3, ui->ui_comm_rc_bar_4,\r\n        ui->ui_comm_rc_bar_5, ui->ui_comm_rc_bar_6, ui->ui_comm_rc_bar_7, ui->ui_comm_rc_bar_8,\r\n        ui->ui_comm_rc_bar_9, ui->ui_comm_rc_bar_10, ui->ui_comm_rc_bar_11, ui->ui_comm_rc_bar_12,\r\n        ui->ui_comm_rc_bar_13, ui->ui_comm_rc_bar_14, ui->ui_comm_rc_bar_15, ui->ui_comm_rc_bar_16\r\n    };\r\n    return (index >= 0 && index < 16) ? bars[index] : NULL;\r\n}\r\n\r\n// 定时器回调\r\nstatic void rc_timer_callback(lv_timer_t *timer)\r\n{\r\n    lv_ui *ui = (lv_ui *)timer->user_data;\r\n    \r\n    for(int i = 0; i < 16; i++) {\r\n        ui_comm_rc_data[i] = 200 + (rand() % 1601);  // [0-1800]\r\n        lv_bar_set_value(get_rc_bar(ui, i), ui_comm_rc_data[i], LV_ANIM_ON);\r\n    }\r\n}",
+											"code_c": "srand(lv_tick_get());\r\n\r\n// 加载旧值\r\nfor(int i = 0; i < 16; i++) {\r\n    lv_bar_set_value(get_rc_bar(&guider_ui, i), ui_comm_rc_data[i], LV_ANIM_OFF);\r\n}\r\n\r\n// 创建定时器\r\nif(rc_update_timer == NULL) {\r\n    rc_update_timer = lv_timer_create(rc_timer_callback, 3000, &guider_ui);\r\n}",
+											"inc_py": "",
+											"code_py": ""
+										}
+									}
+								}
+							]
+						},
+						"screen_unloaded": {
+							"condition": [],
+							"action": [
+								{
+									"dst": "custom_code",
+									"bindCondi": "",
+									"actionList": {
+										"custom_code": {
+											"inc_c": "",
+											"code_c": "// 删除定时器\r\nif(rc_update_timer != NULL) {\r\n    lv_timer_del(rc_update_timer);\r\n    rc_update_timer = NULL;\r\n}",
+											"inc_py": "",
+											"code_py": "// 删除定时器\r\nif(rc_update_timer != NULL) {\r\n    lv_timer_del(rc_update_timer);\r\n    rc_update_timer = NULL;\r\n}"
+										}
+									}
+								}
+							]
+						}
+					}
+				},
 				"style": [
 					{
 						"part": "LV_PART_MAIN",
@@ -22671,14 +22782,14 @@
 						"bg_img_recolor_opa": 0
 					}
 				],
-				"layerName": "ui_comm_RC",
+				"layerName": "ui_comm_rc",
 				"size": [
 					320,
 					240
 				],
 				"widgets": [
 					{
-						"name": "ui_comm_RC_label_tittle",
+						"name": "ui_comm_rc_label_tittle",
 						"id": "zc88ng0t",
 						"type": "label",
 						"visible": true,
@@ -22781,7 +22892,7 @@
 						]
 					},
 					{
-						"name": "ui_comm_RC_btn_back",
+						"name": "ui_comm_rc_btn_back",
 						"id": "yxcgrgum",
 						"type": "btn",
 						"visible": true,
@@ -23626,7 +23737,7 @@
 						"toggle": false
 					},
 					{
-						"name": "ui_comm_RC_cont_1",
+						"name": "ui_comm_rc_cont_1",
 						"id": "hc9627qx",
 						"type": "cont",
 						"visible": true,
@@ -23643,7 +23754,7 @@
 						"default_style": false,
 						"child": [
 							{
-								"name": "ui_comm_RC_label_1",
+								"name": "ui_comm_rc_label_1",
 								"id": "jvj8pjjq",
 								"type": "label",
 								"visible": true,
@@ -23746,7 +23857,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_2",
+								"name": "ui_comm_rc_label_2",
 								"id": "36i4vnf1",
 								"type": "label",
 								"visible": true,
@@ -23849,7 +23960,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_3",
+								"name": "ui_comm_rc_label_3",
 								"id": "3d1sz5tn",
 								"type": "label",
 								"visible": true,
@@ -23952,7 +24063,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_4",
+								"name": "ui_comm_rc_label_4",
 								"id": "t99o0njo",
 								"type": "label",
 								"visible": true,
@@ -24055,7 +24166,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_5",
+								"name": "ui_comm_rc_label_5",
 								"id": "2rqjwycn",
 								"type": "label",
 								"visible": true,
@@ -24158,7 +24269,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_6",
+								"name": "ui_comm_rc_label_6",
 								"id": "dioxk1mn",
 								"type": "label",
 								"visible": true,
@@ -24261,7 +24372,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_7",
+								"name": "ui_comm_rc_label_7",
 								"id": "5rgyrotp",
 								"type": "label",
 								"visible": true,
@@ -24364,7 +24475,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_8",
+								"name": "ui_comm_rc_label_8",
 								"id": "3z5w228v",
 								"type": "label",
 								"visible": true,
@@ -24467,7 +24578,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_9",
+								"name": "ui_comm_rc_label_9",
 								"id": "djxhw2g3",
 								"type": "label",
 								"visible": true,
@@ -24570,7 +24681,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_10",
+								"name": "ui_comm_rc_label_10",
 								"id": "qnt0p769",
 								"type": "label",
 								"visible": true,
@@ -24673,7 +24784,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_11",
+								"name": "ui_comm_rc_label_11",
 								"id": "oq28ijty",
 								"type": "label",
 								"visible": true,
@@ -24776,7 +24887,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_12",
+								"name": "ui_comm_rc_label_12",
 								"id": "vv3n0uc2",
 								"type": "label",
 								"visible": true,
@@ -24879,7 +24990,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_13",
+								"name": "ui_comm_rc_label_13",
 								"id": "zadvti3y",
 								"type": "label",
 								"visible": true,
@@ -24982,7 +25093,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_14",
+								"name": "ui_comm_rc_label_14",
 								"id": "b5c7hk4k",
 								"type": "label",
 								"visible": true,
@@ -25085,7 +25196,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_15",
+								"name": "ui_comm_rc_label_15",
 								"id": "axo4t0kn",
 								"type": "label",
 								"visible": true,
@@ -25188,7 +25299,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_label_16",
+								"name": "ui_comm_rc_label_16",
 								"id": "9pndfd5a",
 								"type": "label",
 								"visible": true,
@@ -25291,7 +25402,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_1",
+								"name": "ui_comm_rc_bar_1",
 								"id": "4pxisah4",
 								"type": "bar",
 								"visible": true,
@@ -25309,14 +25420,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 200,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25364,7 +25475,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_2",
+								"name": "ui_comm_rc_bar_2",
 								"id": "g5e7jrzo",
 								"type": "bar",
 								"visible": true,
@@ -25382,14 +25493,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 200,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25437,7 +25548,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_3",
+								"name": "ui_comm_rc_bar_3",
 								"id": "ea119jot",
 								"type": "bar",
 								"visible": true,
@@ -25455,14 +25566,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 200,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25510,7 +25621,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_4",
+								"name": "ui_comm_rc_bar_4",
 								"id": "tnuahvc1",
 								"type": "bar",
 								"visible": true,
@@ -25528,14 +25639,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25583,7 +25694,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_5",
+								"name": "ui_comm_rc_bar_5",
 								"id": "vfhg84jp",
 								"type": "bar",
 								"visible": true,
@@ -25601,14 +25712,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25656,7 +25767,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_6",
+								"name": "ui_comm_rc_bar_6",
 								"id": "vs7lve6m",
 								"type": "bar",
 								"visible": true,
@@ -25674,14 +25785,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25729,7 +25840,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_7",
+								"name": "ui_comm_rc_bar_7",
 								"id": "is0sefa7",
 								"type": "bar",
 								"visible": true,
@@ -25747,8 +25858,8 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
@@ -25802,7 +25913,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_8",
+								"name": "ui_comm_rc_bar_8",
 								"id": "zg5zg2z6",
 								"type": "bar",
 								"visible": true,
@@ -25820,14 +25931,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25875,7 +25986,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_9",
+								"name": "ui_comm_rc_bar_9",
 								"id": "ony2nv29",
 								"type": "bar",
 								"visible": true,
@@ -25893,14 +26004,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -25948,7 +26059,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_10",
+								"name": "ui_comm_rc_bar_10",
 								"id": "o0kxjkj1",
 								"type": "bar",
 								"visible": true,
@@ -25966,14 +26077,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -26021,7 +26132,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_11",
+								"name": "ui_comm_rc_bar_11",
 								"id": "q2vcjqjc",
 								"type": "bar",
 								"visible": true,
@@ -26039,14 +26150,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -26094,7 +26205,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_12",
+								"name": "ui_comm_rc_bar_12",
 								"id": "8pidw8t0",
 								"type": "bar",
 								"visible": true,
@@ -26112,14 +26223,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -26167,7 +26278,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_13",
+								"name": "ui_comm_rc_bar_13",
 								"id": "idhqksem",
 								"type": "bar",
 								"visible": true,
@@ -26185,14 +26296,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -26240,7 +26351,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_14",
+								"name": "ui_comm_rc_bar_14",
 								"id": "07kvhl5a",
 								"type": "bar",
 								"visible": true,
@@ -26258,14 +26369,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -26313,7 +26424,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_15",
+								"name": "ui_comm_rc_bar_15",
 								"id": "dogyq61x",
 								"type": "bar",
 								"visible": true,
@@ -26331,14 +26442,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
@@ -26386,7 +26497,7 @@
 								]
 							},
 							{
-								"name": "ui_comm_RC_bar_16",
+								"name": "ui_comm_rc_bar_16",
 								"id": "7n1wuyra",
 								"type": "bar",
 								"visible": true,
@@ -26404,14 +26515,14 @@
 								"custom_attribute": [],
 								"mode": "LV_BAR_MODE_NORMAL",
 								"range": [
-									0,
-									100
+									200,
+									1800
 								],
 								"bar_start_value": 30,
 								"animtime": 1000,
 								"animValue": [
 									{
-										"bar_value": 50,
+										"bar_value": 0,
 										"anim": "LV_ANIM_OFF"
 									}
 								],
