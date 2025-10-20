@@ -425,9 +425,9 @@ void setup_scr_ui_comm_uart(lv_ui *ui)
 
     //Write codes ui_comm_uart_ddlist_ch
     ui->ui_comm_uart_ddlist_ch = lv_dropdown_create(ui->ui_comm_uart);
-    lv_dropdown_set_options(ui->ui_comm_uart_ddlist_ch, "1\n2\nLOG\nRC");
-    lv_obj_set_pos(ui->ui_comm_uart_ddlist_ch, 185, 75);
-    lv_obj_set_size(ui->ui_comm_uart_ddlist_ch, 75, 30);
+    lv_dropdown_set_options(ui->ui_comm_uart_ddlist_ch, "LOG\nRC\nRS485\nUART2");
+    lv_obj_set_pos(ui->ui_comm_uart_ddlist_ch, 170, 75);
+    lv_obj_set_size(ui->ui_comm_uart_ddlist_ch, 90, 30);
 
     //Write style for ui_comm_uart_ddlist_ch, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_text_color(ui->ui_comm_uart_ddlist_ch, lv_color_hex(0x0D3055), LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -490,7 +490,7 @@ void setup_scr_ui_comm_uart(lv_ui *ui)
 
     //Write codes ui_comm_uart_ta_rate
     ui->ui_comm_uart_ta_rate = lv_textarea_create(ui->ui_comm_uart);
-    lv_textarea_set_text(ui->ui_comm_uart_ta_rate, "5000000");
+    lv_textarea_set_text(ui->ui_comm_uart_ta_rate, "921600");
     lv_textarea_set_placeholder_text(ui->ui_comm_uart_ta_rate, "");
     lv_textarea_set_password_bullet(ui->ui_comm_uart_ta_rate, "*");
     lv_textarea_set_password_mode(ui->ui_comm_uart_ta_rate, false);
@@ -501,7 +501,7 @@ void setup_scr_ui_comm_uart(lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_comm_uart_ta_rate, ta_event_cb, LV_EVENT_ALL, ui->g_kb_top_layer);
 #endif
     lv_obj_set_pos(ui->ui_comm_uart_ta_rate, 60, 75);
-    lv_obj_set_size(ui->ui_comm_uart_ta_rate, 120, 30);
+    lv_obj_set_size(ui->ui_comm_uart_ta_rate, 105, 30);
 
     //Write style for ui_comm_uart_ta_rate, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_text_color(ui->ui_comm_uart_ta_rate, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);

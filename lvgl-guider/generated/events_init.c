@@ -464,6 +464,21 @@ static void ui_comm_uart_ddlist_ch_event_handler (lv_event_t *e)
     }
 }
 
+static void ui_comm_uart_sw_uart_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        lv_obj_t * status_obj = lv_event_get_target(e);
+        int status = lv_obj_has_state(status_obj, LV_STATE_CHECKED) ? true : false;
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 static void ui_comm_uart_btn_tx_clean_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -509,6 +524,7 @@ static void ui_comm_uart_btn_back_event_handler (lv_event_t *e)
 void events_init_ui_comm_uart (lv_ui *ui)
 {
     lv_obj_add_event_cb(ui->ui_comm_uart_ddlist_ch, ui_comm_uart_ddlist_ch_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_uart_sw_uart, ui_comm_uart_sw_uart_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_uart_btn_tx_clean, ui_comm_uart_btn_tx_clean_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_uart_btn_rx_clean, ui_comm_uart_btn_rx_clean_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_uart_btn_back, ui_comm_uart_btn_back_event_handler, LV_EVENT_ALL, ui);

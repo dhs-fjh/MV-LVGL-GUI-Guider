@@ -7478,7 +7478,49 @@
 							"radius": 10
 						}
 					],
-					"dropToGap": false
+					"dropToGap": false,
+					"event": {
+						"widget": {
+							"value_changed": {
+								"condition": [
+									{
+										"type": "switch",
+										"value": "status",
+										"id": "m4xkd3zc",
+										"isSystem": true,
+										"children": [
+											{
+												"type": "case",
+												"id": "m4xkd3zc_1",
+												"isSystem": true,
+												"value": "true"
+											},
+											{
+												"type": "case",
+												"id": "m4xkd3zc_0",
+												"isSystem": true,
+												"value": "false"
+											}
+										]
+									},
+									{
+										"value": "(true)// 波特率判断 越界则改为边界值",
+										"id": "nx15fh4x",
+										"children": [
+											{
+												"type": "else",
+												"id": "ichcjeh0",
+												"value": "",
+												"isSystem": true
+											}
+										],
+										"type": "if"
+									}
+								],
+								"action": []
+							}
+						}
+					}
 				},
 				{
 					"name": "ta_rate",
@@ -7489,10 +7531,10 @@
 					"visible": true,
 					"isLock": true,
 					"flag": [],
-					"width": 120,
+					"width": 105,
 					"height": 30,
 					"default_style": false,
-					"text": "5000000",
+					"text": "921600",
 					"password_mode": false,
 					"one_line_mode": false,
 					"placeholder": "",
@@ -7586,26 +7628,26 @@
 					"name": "ddlist_ch",
 					"id": "yjygfte7",
 					"type": "ddlist",
-					"left": 185,
+					"left": 170,
 					"top": 75,
 					"visible": true,
 					"isLock": true,
 					"flag": [],
-					"width": 75,
+					"width": 90,
 					"height": 30,
 					"default_style": false,
 					"list": [
-						{
-							"text": "1"
-						},
-						{
-							"text": "2"
-						},
 						{
 							"text": "LOG"
 						},
 						{
 							"text": "RC"
+						},
+						{
+							"text": "RS485"
+						},
+						{
+							"text": "UART2"
 						}
 					],
 					"draw_arrow": true,
@@ -7795,16 +7837,16 @@
 					],
 					"undefined": [
 						{
-							"text": "1"
+							"text": "LOG"
 						},
 						{
-							"text": "2"
+							"text": "RC"
 						},
 						{
-							"text": ""
+							"text": "RS485"
 						},
 						{
-							"text": ""
+							"text": "hello"
 						}
 					],
 					"event": {
@@ -27219,7 +27261,49 @@
 																"radius": 10
 															}
 														],
-														"dropToGap": false
+														"dropToGap": false,
+														"event": {
+															"widget": {
+																"value_changed": {
+																	"condition": [
+																		{
+																			"type": "switch",
+																			"value": "status",
+																			"id": "m4xkd3zc",
+																			"isSystem": true,
+																			"children": [
+																				{
+																					"type": "case",
+																					"id": "m4xkd3zc_1",
+																					"isSystem": true,
+																					"value": "true"
+																				},
+																				{
+																					"type": "case",
+																					"id": "m4xkd3zc_0",
+																					"isSystem": true,
+																					"value": "false"
+																				}
+																			]
+																		},
+																		{
+																			"value": "(true)// 波特率判断 越界则改为边界值",
+																			"id": "nx15fh4x",
+																			"children": [
+																				{
+																					"type": "else",
+																					"id": "ichcjeh0",
+																					"value": "",
+																					"isSystem": true
+																				}
+																			],
+																			"type": "if"
+																		}
+																	],
+																	"action": []
+																}
+															}
+														}
 													},
 													{
 														"name": "ta_rate",
@@ -27230,10 +27314,10 @@
 														"visible": true,
 														"isLock": true,
 														"flag": [],
-														"width": 120,
+														"width": 105,
 														"height": 30,
 														"default_style": false,
-														"text": "5000000",
+														"text": "921600",
 														"password_mode": false,
 														"one_line_mode": false,
 														"placeholder": "",
@@ -27327,26 +27411,26 @@
 														"name": "ddlist_ch",
 														"id": "yjygfte7",
 														"type": "ddlist",
-														"left": 185,
+														"left": 170,
 														"top": 75,
 														"visible": true,
 														"isLock": true,
 														"flag": [],
-														"width": 75,
+														"width": 90,
 														"height": 30,
 														"default_style": false,
 														"list": [
-															{
-																"text": "1"
-															},
-															{
-																"text": "2"
-															},
 															{
 																"text": "LOG"
 															},
 															{
 																"text": "RC"
+															},
+															{
+																"text": "RS485"
+															},
+															{
+																"text": "UART2"
 															}
 														],
 														"draw_arrow": true,
@@ -27536,16 +27620,16 @@
 														],
 														"undefined": [
 															{
-																"text": "1"
+																"text": "LOG"
 															},
 															{
-																"text": "2"
+																"text": "RC"
 															},
 															{
-																"text": ""
+																"text": "RS485"
 															},
 															{
-																"text": ""
+																"text": "hello"
 															}
 														],
 														"event": {
@@ -38792,11 +38876,11 @@
 						"visible": true,
 						"flag": [],
 						"pos": [
-							185,
+							170,
 							75
 						],
 						"size": [
-							75,
+							90,
 							30
 						],
 						"default_style": false,
@@ -39050,7 +39134,7 @@
 								"bg_opa": 255
 							}
 						],
-						"text": "1\\n2\\nLOG\\nRC",
+						"text": "LOG\\nRC\\nRS485\\nUART2",
 						"draw_arrow": true
 					},
 					{
@@ -39064,11 +39148,11 @@
 							75
 						],
 						"size": [
-							120,
+							105,
 							30
 						],
 						"default_style": false,
-						"text": "5000000",
+						"text": "921600",
 						"password_mode": false,
 						"one_line_mode": false,
 						"placeholder": "",
@@ -39175,6 +39259,48 @@
 						"default_style": false,
 						"attribute_type": "freemaster",
 						"custom_attribute": [],
+						"event": {
+							"widget": {
+								"value_changed": {
+									"condition": [
+										{
+											"type": "switch",
+											"value": "status",
+											"id": "m4xkd3zc",
+											"isSystem": true,
+											"children": [
+												{
+													"type": "case",
+													"id": "m4xkd3zc_1",
+													"isSystem": true,
+													"value": "true"
+												},
+												{
+													"type": "case",
+													"id": "m4xkd3zc_0",
+													"isSystem": true,
+													"value": "false"
+												}
+											]
+										},
+										{
+											"value": "(true)// 波特率判断 越界则改为边界值",
+											"id": "nx15fh4x",
+											"children": [
+												{
+													"type": "else",
+													"id": "ichcjeh0",
+													"value": "",
+													"isSystem": true
+												}
+											],
+											"type": "if"
+										}
+									],
+									"action": []
+								}
+							}
+						},
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
