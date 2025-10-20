@@ -18,9 +18,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-static uint16_t ui_comm_rc_data[16] = {500, 500, 500, 500, 500, 500, 500, 500,
-                                       500, 500, 500, 500, 500, 500, 500, 500
-                                      };
+static uint16_t ui_comm_rc_data[16];
 static lv_timer_t *rc_update_timer = NULL;
 
 // 获取 Bar 对象的辅助函数
@@ -53,7 +51,7 @@ static void ui_main_btn_pwr_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         break;
     }
@@ -62,11 +60,11 @@ static void ui_main_btn_pwr_event_handler (lv_event_t *e)
     }
 }
 
-static void ui_main_btn_IO_event_handler (lv_event_t *e)
+static void ui_main_btn_io_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_io, guider_ui.ui_io_del, &guider_ui.ui_main_del, setup_scr_ui_io, LV_SCR_LOAD_ANIM_MOVE_LEFT, 200, 0, false, true);
         break;
@@ -80,7 +78,7 @@ static void ui_main_btn_comm_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm, guider_ui.ui_comm_del, &guider_ui.ui_main_del, setup_scr_ui_comm, LV_SCR_LOAD_ANIM_MOVE_LEFT, 200, 0, false, true);
         break;
@@ -94,7 +92,7 @@ static void ui_main_btn_led_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_led, guider_ui.ui_led_del, &guider_ui.ui_main_del, setup_scr_ui_led, LV_SCR_LOAD_ANIM_MOVE_LEFT, 200, 0, false, true);
         break;
@@ -108,7 +106,7 @@ static void ui_main_btn_storage_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_storage, guider_ui.ui_storage_del, &guider_ui.ui_main_del, setup_scr_ui_storage, LV_SCR_LOAD_ANIM_MOVE_LEFT, 200, 0, false, true);
         break;
@@ -122,7 +120,7 @@ static void ui_main_btn_settings_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_settings, guider_ui.ui_settings_del, &guider_ui.ui_main_del, setup_scr_ui_settings, LV_SCR_LOAD_ANIM_MOVE_LEFT, 200, 0, false, true);
         break;
@@ -135,7 +133,7 @@ static void ui_main_btn_settings_event_handler (lv_event_t *e)
 void events_init_ui_main (lv_ui *ui)
 {
     lv_obj_add_event_cb(ui->ui_main_btn_pwr, ui_main_btn_pwr_event_handler, LV_EVENT_ALL, ui);
-    lv_obj_add_event_cb(ui->ui_main_btn_IO, ui_main_btn_IO_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_main_btn_io, ui_main_btn_io_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_main_btn_comm, ui_main_btn_comm_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_main_btn_led, ui_main_btn_led_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_main_btn_storage, ui_main_btn_storage_event_handler, LV_EVENT_ALL, ui);
@@ -146,7 +144,7 @@ static void ui_settings_btn_home_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_main, guider_ui.ui_main_del, &guider_ui.ui_settings_del, setup_scr_ui_main, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 200, 0, false, true);
         break;
@@ -161,24 +159,11 @@ void events_init_ui_settings (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_settings_btn_home, ui_settings_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
-static void ui_storage_event_handler (lv_event_t *e)
-{
-    lv_event_code_t code = lv_event_get_code(e);
-    switch (code) {
-    case LV_EVENT_CLICKED:
-    {
-        break;
-    }
-    default:
-        break;
-    }
-}
-
 static void ui_storage_btn_next_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         break;
     }
@@ -191,7 +176,7 @@ static void ui_storage_btn_prev_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         break;
     }
@@ -204,7 +189,7 @@ static void ui_storage_btn_home_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_main, guider_ui.ui_main_del, &guider_ui.ui_storage_del, setup_scr_ui_main, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 200, 0, false, true);
         break;
@@ -216,17 +201,30 @@ static void ui_storage_btn_home_event_handler (lv_event_t *e)
 
 void events_init_ui_storage (lv_ui *ui)
 {
-    lv_obj_add_event_cb(ui->ui_storage, ui_storage_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_storage_btn_next, ui_storage_btn_next_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_storage_btn_prev, ui_storage_btn_prev_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_storage_btn_home, ui_storage_btn_home_event_handler, LV_EVENT_ALL, ui);
+}
+
+static void ui_comm_list_comm_item0_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_can, guider_ui.ui_comm_can_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_can, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 200, 0, false, true);
+        break;
+    }
+    default:
+        break;
+    }
 }
 
 static void ui_comm_list_comm_item2_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_PRESSED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_rc, guider_ui.ui_comm_rc_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_rc, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 200, 0, false, true);
         break;
@@ -240,7 +238,7 @@ static void ui_comm_btn_home_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_CLICKED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_main, guider_ui.ui_main_del, &guider_ui.ui_comm_del, setup_scr_ui_main, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 200, 0, false, true);
         break;
@@ -252,8 +250,91 @@ static void ui_comm_btn_home_event_handler (lv_event_t *e)
 
 void events_init_ui_comm (lv_ui *ui)
 {
+    lv_obj_add_event_cb(ui->ui_comm_list_comm_item0, ui_comm_list_comm_item0_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_list_comm_item2, ui_comm_list_comm_item2_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_btn_home, ui_comm_btn_home_event_handler, LV_EVENT_ALL, ui);
+}
+
+static void ui_comm_can_ta_tx_buf_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_CLICKED:
+    {
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_btn_tx_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_btn_tx_back_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_PRESSED:
+    {
+        lv_textarea_set_text(guider_ui.ui_comm_can_ta_tx_buf, "");
+        break;
+    }
+    case LV_EVENT_LONG_PRESSED:
+    {
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_btn_rx_clean_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        lv_textarea_set_text(guider_ui.ui_comm_can_ta_rx_msg, "");
+        // buf索引归零
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_btn_back_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm, guider_ui.ui_comm_del, &guider_ui.ui_comm_can_del, setup_scr_ui_comm, LV_SCR_LOAD_ANIM_MOVE_TOP, 200, 0, false, true);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+void events_init_ui_comm_can (lv_ui *ui)
+{
+    lv_obj_add_event_cb(ui->ui_comm_can_ta_tx_buf, ui_comm_can_ta_tx_buf_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_btn_tx, ui_comm_can_btn_tx_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_btn_tx_back, ui_comm_can_btn_tx_back_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_btn_rx_clean, ui_comm_can_btn_rx_clean_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_btn_back, ui_comm_can_btn_back_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void ui_comm_rc_event_handler (lv_event_t *e)
@@ -293,7 +374,7 @@ static void ui_comm_rc_btn_back_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_PRESSED:
+    case LV_EVENT_RELEASED:
     {
         ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm, guider_ui.ui_comm_del, &guider_ui.ui_comm_rc_del, setup_scr_ui_comm, LV_SCR_LOAD_ANIM_MOVE_TOP, 200, 0, false, true);
         break;
