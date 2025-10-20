@@ -29,7 +29,7 @@ void setup_scr_ui_comm(lv_ui *ui)
     //Write codes ui_comm_list_comm
     ui->ui_comm_list_comm = lv_list_create(ui->ui_comm);
     ui->ui_comm_list_comm_item0 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "CAN");
-    ui->ui_comm_list_comm_item1 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "LOG");
+    ui->ui_comm_list_comm_item1 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "UART");
     ui->ui_comm_list_comm_item2 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "RC");
     lv_obj_set_pos(ui->ui_comm_list_comm, 5, 40);
     lv_obj_set_size(ui->ui_comm_list_comm, 310, 195);

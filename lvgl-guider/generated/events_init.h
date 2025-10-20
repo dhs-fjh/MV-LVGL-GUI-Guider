@@ -23,6 +23,7 @@ void events_init_ui_settings(lv_ui *ui);
 void events_init_ui_storage(lv_ui *ui);
 void events_init_ui_comm(lv_ui *ui);
 void events_init_ui_comm_can(lv_ui *ui);
+void events_init_ui_comm_uart(lv_ui *ui);
 void events_init_ui_comm_rc(lv_ui *ui);
 void events_init_ui_io(lv_ui *ui);
 void events_init_ui_led(lv_ui *ui);

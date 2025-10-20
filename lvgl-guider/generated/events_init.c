@@ -221,6 +221,20 @@ static void ui_comm_list_comm_item0_event_handler (lv_event_t *e)
     }
 }
 
+static void ui_comm_list_comm_item1_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm_uart, guider_ui.ui_comm_uart_del, &guider_ui.ui_comm_del, setup_scr_ui_comm_uart, LV_SCR_LOAD_ANIM_MOVE_BOTTOM, 200, 0, false, true);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 static void ui_comm_list_comm_item2_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -252,6 +266,7 @@ static void ui_comm_btn_home_event_handler (lv_event_t *e)
 void events_init_ui_comm (lv_ui *ui)
 {
     lv_obj_add_event_cb(ui->ui_comm_list_comm_item0, ui_comm_list_comm_item0_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_list_comm_item1, ui_comm_list_comm_item1_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_list_comm_item2, ui_comm_list_comm_item2_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_btn_home, ui_comm_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
@@ -282,7 +297,7 @@ static void ui_comm_can_ddlist_ch_event_handler (lv_event_t *e)
     case LV_EVENT_VALUE_CHANGED:
     {
         uint16_t id = lv_dropdown_get_selected(guider_ui.ui_comm_can_ddlist_ch);
-
+        // 发送通道
         break;
     }
     default:
@@ -432,6 +447,71 @@ void events_init_ui_comm_can (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_comm_can_btn_tx_clean, ui_comm_can_btn_tx_clean_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_can_btn_rx_clean, ui_comm_can_btn_rx_clean_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_can_btn_back, ui_comm_can_btn_back_event_handler, LV_EVENT_ALL, ui);
+}
+
+static void ui_comm_uart_ddlist_ch_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        uint16_t id = lv_dropdown_get_selected(guider_ui.ui_comm_uart_ddlist_ch);
+
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_uart_btn_tx_clean_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        lv_textarea_set_text(guider_ui.ui_comm_uart_ta_tx_buf, "");
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_uart_btn_rx_clean_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        lv_textarea_set_text(guider_ui.ui_comm_uart_ta_rx_msg, "");
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_uart_btn_back_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_RELEASED:
+    {
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_comm, guider_ui.ui_comm_del, &guider_ui.ui_comm_uart_del, setup_scr_ui_comm, LV_SCR_LOAD_ANIM_MOVE_TOP, 200, 0, false, true);
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+void events_init_ui_comm_uart (lv_ui *ui)
+{
+    lv_obj_add_event_cb(ui->ui_comm_uart_ddlist_ch, ui_comm_uart_ddlist_ch_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_uart_btn_tx_clean, ui_comm_uart_btn_tx_clean_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_uart_btn_rx_clean, ui_comm_uart_btn_rx_clean_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_uart_btn_back, ui_comm_uart_btn_back_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void ui_comm_rc_event_handler (lv_event_t *e)

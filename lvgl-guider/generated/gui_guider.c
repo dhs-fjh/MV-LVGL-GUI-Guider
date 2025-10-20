@@ -80,6 +80,7 @@ void init_scr_del_flag(lv_ui *ui)
     ui->ui_storage_del = true;
     ui->ui_comm_del = true;
     ui->ui_comm_can_del = true;
+    ui->ui_comm_uart_del = true;
     ui->ui_comm_rc_del = true;
     ui->ui_io_del = true;
     ui->ui_led_del = true;
