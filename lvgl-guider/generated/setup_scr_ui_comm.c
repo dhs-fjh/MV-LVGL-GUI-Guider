@@ -28,10 +28,9 @@ void setup_scr_ui_comm(lv_ui *ui)
 
     //Write codes ui_comm_list_comm
     ui->ui_comm_list_comm = lv_list_create(ui->ui_comm);
-    ui->ui_comm_list_comm_item0 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "CAN1");
-    ui->ui_comm_list_comm_item1 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "CAN2");
-    ui->ui_comm_list_comm_item2 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "LOG");
-    ui->ui_comm_list_comm_item3 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "RC");
+    ui->ui_comm_list_comm_item0 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "CAN");
+    ui->ui_comm_list_comm_item1 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "LOG");
+    ui->ui_comm_list_comm_item2 = lv_list_add_btn(ui->ui_comm_list_comm, LV_SYMBOL_USB, "RC");
     lv_obj_set_pos(ui->ui_comm_list_comm, 5, 40);
     lv_obj_set_size(ui->ui_comm_list_comm, 310, 195);
     lv_obj_set_scrollbar_mode(ui->ui_comm_list_comm, LV_SCROLLBAR_MODE_OFF);
@@ -119,7 +118,6 @@ void setup_scr_ui_comm(lv_ui *ui)
     lv_style_set_bg_opa(&style_ui_comm_list_comm_extra_btns_main_default, 255);
     lv_style_set_bg_color(&style_ui_comm_list_comm_extra_btns_main_default, lv_color_hex(0xffffff));
     lv_style_set_bg_grad_dir(&style_ui_comm_list_comm_extra_btns_main_default, LV_GRAD_DIR_NONE);
-    lv_obj_add_style(ui->ui_comm_list_comm_item3, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_add_style(ui->ui_comm_list_comm_item2, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_add_style(ui->ui_comm_list_comm_item1, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_add_style(ui->ui_comm_list_comm_item0, &style_ui_comm_list_comm_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);

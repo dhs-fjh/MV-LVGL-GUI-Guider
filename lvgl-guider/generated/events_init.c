@@ -68,7 +68,7 @@ static void ui_main_btn_IO_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_CLICKED:
     {
-        ui_load_scr_animation(&guider_ui, &guider_ui.ui_IO, guider_ui.ui_IO_del, &guider_ui.ui_main_del, setup_scr_ui_IO, LV_SCR_LOAD_ANIM_MOVE_LEFT, 200, 0, false, true);
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_io, guider_ui.ui_io_del, &guider_ui.ui_main_del, setup_scr_ui_io, LV_SCR_LOAD_ANIM_MOVE_LEFT, 200, 0, false, true);
         break;
     }
     default:
@@ -222,7 +222,7 @@ void events_init_ui_storage (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_storage_btn_home, ui_storage_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
-static void ui_comm_list_comm_item3_event_handler (lv_event_t *e)
+static void ui_comm_list_comm_item2_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
@@ -252,7 +252,7 @@ static void ui_comm_btn_home_event_handler (lv_event_t *e)
 
 void events_init_ui_comm (lv_ui *ui)
 {
-    lv_obj_add_event_cb(ui->ui_comm_list_comm_item3, ui_comm_list_comm_item3_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_list_comm_item2, ui_comm_list_comm_item2_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_btn_home, ui_comm_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
@@ -309,13 +309,13 @@ void events_init_ui_comm_rc (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_comm_rc_btn_back, ui_comm_rc_btn_back_event_handler, LV_EVENT_ALL, ui);
 }
 
-static void ui_IO_btn_home_event_handler (lv_event_t *e)
+static void ui_io_btn_home_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
     case LV_EVENT_CLICKED:
     {
-        ui_load_scr_animation(&guider_ui, &guider_ui.ui_main, guider_ui.ui_main_del, &guider_ui.ui_IO_del, setup_scr_ui_main, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 200, 0, false, true);
+        ui_load_scr_animation(&guider_ui, &guider_ui.ui_main, guider_ui.ui_main_del, &guider_ui.ui_io_del, setup_scr_ui_main, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 200, 0, false, true);
         break;
     }
     default:
@@ -323,9 +323,9 @@ static void ui_IO_btn_home_event_handler (lv_event_t *e)
     }
 }
 
-void events_init_ui_IO (lv_ui *ui)
+void events_init_ui_io (lv_ui *ui)
 {
-    lv_obj_add_event_cb(ui->ui_IO_btn_home, ui_IO_btn_home_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_io_btn_home, ui_io_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
 static void ui_led_event_handler (lv_event_t *e)

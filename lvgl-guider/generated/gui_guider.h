@@ -64,7 +64,6 @@ typedef struct
 	lv_obj_t *ui_comm_list_comm_item0;
 	lv_obj_t *ui_comm_list_comm_item1;
 	lv_obj_t *ui_comm_list_comm_item2;
-	lv_obj_t *ui_comm_list_comm_item3;
 	lv_obj_t *ui_comm_label_title;
 	lv_obj_t *ui_comm_btn_home;
 	lv_obj_t *ui_comm_btn_home_label;
@@ -106,11 +105,11 @@ typedef struct
 	lv_obj_t *ui_comm_rc_bar_14;
 	lv_obj_t *ui_comm_rc_bar_15;
 	lv_obj_t *ui_comm_rc_bar_16;
-	lv_obj_t *ui_IO;
-	bool ui_IO_del;
-	lv_obj_t *ui_IO_label_title;
-	lv_obj_t *ui_IO_btn_home;
-	lv_obj_t *ui_IO_btn_home_label;
+	lv_obj_t *ui_io;
+	bool ui_io_del;
+	lv_obj_t *ui_io_label_title;
+	lv_obj_t *ui_io_btn_home;
+	lv_obj_t *ui_io_btn_home_label;
 	lv_obj_t *ui_led;
 	bool ui_led_del;
 	lv_obj_t *ui_led_slider_period;
@@ -149,7 +148,7 @@ void setup_scr_ui_settings(lv_ui *ui);
 void setup_scr_ui_storage(lv_ui *ui);
 void setup_scr_ui_comm(lv_ui *ui);
 void setup_scr_ui_comm_rc(lv_ui *ui);
-void setup_scr_ui_IO(lv_ui *ui);
+void setup_scr_ui_io(lv_ui *ui);
 void setup_scr_ui_led(lv_ui *ui);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
