@@ -7,7 +7,7 @@
 		"defaultFamily": "montserratMedium",
 		"defaultScreen": "emg7n4dm",
 		"keyBoard": {
-			"display_kb": false,
+			"display_kb": true,
 			"chinese_input": false,
 			"chinese_library": "mini",
 			"keyboard_font_type": "SourceHanSerifSC_Regular",
@@ -4223,7 +4223,7 @@
 					]
 				},
 				{
-					"name": "btn_tx_back",
+					"name": "btn_tx_clean",
 					"id": "92bzd2nu",
 					"type": "btn",
 					"left": 230,
@@ -4235,7 +4235,7 @@
 					"height": 30,
 					"default_style": false,
 					"long_mode": "LV_LABEL_LONG_WRAP",
-					"text": "LV_SYMBOL_BACKSPACE",
+					"text": "LV_SYMBOL_TRASH",
 					"toggle": false,
 					"style": [
 						{
@@ -4408,7 +4408,7 @@
 					"dropToGap": false,
 					"event": {
 						"widget": {
-							"pressed": {
+							"released": {
 								"condition": [],
 								"action": [
 									{
@@ -4421,10 +4421,6 @@
 										}
 									}
 								]
-							},
-							"long_pressed": {
-								"condition": [],
-								"action": []
 							}
 						}
 					}
@@ -4616,29 +4612,42 @@
 						"widget": {
 							"released": {
 								"condition": [],
-								"action": []
+								"action": [
+									{
+										"dst": "custom_code",
+										"bindCondi": "",
+										"actionList": {
+											"custom_code": {
+												"inc_c": "",
+												"code_c": "",
+												"inc_py": "",
+												"code_py": ""
+											}
+										}
+									}
+								]
 							}
 						}
 					}
 				},
 				{
-					"name": "ta_rx_msg",
-					"id": "2cs77wew",
+					"name": "ta_tx_buf",
+					"id": "pu3zm1r0",
 					"type": "ta",
 					"left": 5,
-					"top": 45,
+					"top": 40,
 					"visible": true,
-					"isLock": false,
+					"isLock": true,
 					"flag": [],
-					"width": 307,
-					"height": 118,
+					"width": 310,
+					"height": 30,
 					"default_style": false,
-					"text": "Hello World",
+					"text": "AA BB CC DD EE FF AA BB CC",
 					"password_mode": false,
 					"one_line_mode": false,
 					"placeholder": "",
 					"accept_characters": "",
-					"max_len": 512,
+					"max_len": 32,
 					"password_bullet": "*",
 					"style": [
 						{
@@ -4722,14 +4731,22 @@
 							"radius": 0
 						}
 					],
+					"event": {
+						"widget": {
+							"clicked": {
+								"condition": [],
+								"action": []
+							}
+						}
+					},
 					"layerName": "ui_comm_can"
 				},
 				{
 					"name": "label_can_id",
 					"id": "u1dd7rhe",
 					"type": "label",
-					"left": 5,
-					"top": 178,
+					"left": 3,
+					"top": 82,
 					"visible": true,
 					"isLock": true,
 					"flag": [],
@@ -4829,7 +4846,7 @@
 					"id": "1ahs4bwa",
 					"type": "ta",
 					"left": 35,
-					"top": 170,
+					"top": 75,
 					"visible": true,
 					"isLock": true,
 					"flag": [],
@@ -4924,14 +4941,35 @@
 							"bg_opa": 255,
 							"radius": 0
 						}
-					]
+					],
+					"event": {
+						"widget": {
+							"value_changed": {
+								"condition": [],
+								"action": [
+									{
+										"dst": "custom_code",
+										"bindCondi": "",
+										"actionList": {
+											"custom_code": {
+												"inc_c": "",
+												"code_c": "// 文本转ID",
+												"inc_py": "",
+												"code_py": ""
+											}
+										}
+									}
+								]
+							}
+						}
+					}
 				},
 				{
 					"name": "ddlist_ide",
 					"id": "ibul64ke",
 					"type": "ddlist",
 					"left": 106,
-					"top": 170,
+					"top": 75,
 					"visible": true,
 					"isLock": true,
 					"flag": [],
@@ -5130,14 +5168,56 @@
 							"bg_color": "#00ff00",
 							"bg_opa": 255
 						}
-					]
+					],
+					"event": {
+						"widget": {
+							"value_changed": {
+								"condition": [
+									{
+										"type": "switch",
+										"value": "id",
+										"id": "ibul64ke",
+										"isSystem": true,
+										"children": [
+											{
+												"type": "case",
+												"id": "ibul64ke_0",
+												"isSystem": true,
+												"value": 0
+											},
+											{
+												"type": "case",
+												"id": "ibul64ke_1",
+												"isSystem": true,
+												"value": 1
+											}
+										]
+									}
+								],
+								"action": [
+									{
+										"dst": "custom_code",
+										"bindCondi": "",
+										"actionList": {
+											"custom_code": {
+												"inc_c": "",
+												"code_c": "// ID模式",
+												"inc_py": "",
+												"code_py": ""
+											}
+										}
+									}
+								]
+							}
+						}
+					}
 				},
 				{
 					"name": "ddlist_rtr",
 					"id": "oatk8rh9",
 					"type": "ddlist",
 					"left": 153,
-					"top": 170,
+					"top": 75,
 					"visible": true,
 					"isLock": true,
 					"flag": [],
@@ -5336,14 +5416,56 @@
 							"bg_color": "#00ff00",
 							"bg_opa": 255
 						}
-					]
+					],
+					"event": {
+						"widget": {
+							"value_changed": {
+								"condition": [
+									{
+										"type": "switch",
+										"value": "id",
+										"id": "oatk8rh9",
+										"isSystem": true,
+										"children": [
+											{
+												"type": "case",
+												"id": "oatk8rh9_0",
+												"isSystem": true,
+												"value": 0
+											},
+											{
+												"type": "case",
+												"id": "oatk8rh9_1",
+												"isSystem": true,
+												"value": 1
+											}
+										]
+									}
+								],
+								"action": [
+									{
+										"dst": "custom_code",
+										"bindCondi": "",
+										"actionList": {
+											"custom_code": {
+												"inc_c": "",
+												"code_c": "// 数据/遥控帧",
+												"inc_py": "",
+												"code_py": ""
+											}
+										}
+									}
+								]
+							}
+						}
+					}
 				},
 				{
 					"name": "ddlist_rate",
 					"id": "2x2vhfaa",
 					"type": "ddlist",
 					"left": 200,
-					"top": 170,
+					"top": 75,
 					"visible": true,
 					"isLock": true,
 					"flag": [],
@@ -5572,14 +5694,116 @@
 							"bg_color": "#00ff00",
 							"bg_opa": 255
 						}
-					]
+					],
+					"event": {
+						"widget": {
+							"value_changed": {
+								"condition": [
+									{
+										"type": "switch",
+										"value": "id",
+										"id": "2x2vhfaa",
+										"isSystem": true,
+										"children": [
+											{
+												"type": "case",
+												"id": "2x2vhfaa_0",
+												"isSystem": true,
+												"value": 0
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_1",
+												"isSystem": true,
+												"value": 1
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_2",
+												"isSystem": true,
+												"value": 2
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_3",
+												"isSystem": true,
+												"value": 3
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_4",
+												"isSystem": true,
+												"value": 4
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_5",
+												"isSystem": true,
+												"value": 5
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_6",
+												"isSystem": true,
+												"value": 6
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_7",
+												"isSystem": true,
+												"value": 7
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_8",
+												"isSystem": true,
+												"value": 8
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_9",
+												"isSystem": true,
+												"value": 9
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_10",
+												"isSystem": true,
+												"value": 10
+											},
+											{
+												"type": "case",
+												"id": "2x2vhfaa_11",
+												"isSystem": true,
+												"value": 11
+											}
+										]
+									}
+								],
+								"action": [
+									{
+										"dst": "custom_code",
+										"bindCondi": "",
+										"actionList": {
+											"custom_code": {
+												"inc_c": "",
+												"code_c": "// 发送波特率修改",
+												"inc_py": "",
+												"code_py": ""
+											}
+										}
+									}
+								]
+							}
+						}
+					}
 				},
 				{
 					"name": "ddlist_ch",
 					"id": "7f0s17vs",
 					"type": "ddlist",
 					"left": 275,
-					"top": 170,
+					"top": 75,
 					"visible": true,
 					"isLock": true,
 					"flag": [],
@@ -5778,26 +6002,68 @@
 							"bg_color": "#00ff00",
 							"bg_opa": 255
 						}
-					]
+					],
+					"event": {
+						"widget": {
+							"value_changed": {
+								"condition": [
+									{
+										"type": "switch",
+										"value": "id",
+										"id": "7f0s17vs",
+										"isSystem": true,
+										"children": [
+											{
+												"type": "case",
+												"id": "7f0s17vs_0",
+												"isSystem": true,
+												"value": 0
+											},
+											{
+												"type": "case",
+												"id": "7f0s17vs_1",
+												"isSystem": true,
+												"value": 1
+											}
+										]
+									}
+								],
+								"action": [
+									{
+										"dst": "custom_code",
+										"bindCondi": "",
+										"actionList": {
+											"custom_code": {
+												"inc_c": "",
+												"code_c": "",
+												"inc_py": "",
+												"code_py": ""
+											}
+										}
+									}
+								]
+							}
+						}
+					}
 				},
 				{
-					"name": "ta_tx_buf",
-					"id": "pu3zm1r0",
+					"name": "ta_rx_msg",
+					"id": "2cs77wew",
 					"type": "ta",
 					"left": 5,
-					"top": 205,
+					"top": 110,
 					"visible": true,
-					"isLock": true,
+					"isLock": false,
 					"flag": [],
 					"width": 310,
-					"height": 30,
+					"height": 125,
 					"default_style": false,
-					"text": "AA BB CC DD EE FF AA BB CC",
+					"text": "Hello World",
 					"password_mode": false,
 					"one_line_mode": false,
 					"placeholder": "",
 					"accept_characters": "",
-					"max_len": 32,
+					"max_len": 512,
 					"password_bullet": "*",
 					"style": [
 						{
@@ -5882,17 +6148,49 @@
 						}
 					],
 					"event": {
-						"widget": {
-							"clicked": {
-								"condition": [],
-								"action": []
-							}
-						}
+						"widget": {}
 					},
 					"layerName": "ui_comm_can"
 				}
 			],
-			"event": {},
+			"event": {
+				"widget": {
+					"screen_load_start": {
+						"condition": [],
+						"action": [
+							{
+								"dst": "custom_code",
+								"bindCondi": "",
+								"actionList": {
+									"custom_code": {
+										"inc_c": "static uint32_t *ui_comm_can_rx_msg_buf;    // 申请的内存的地址指向",
+										"code_c": "// 申请rx_msg_buf内存",
+										"inc_py": "",
+										"code_py": ""
+									}
+								}
+							}
+						]
+					},
+					"screen_unloaded": {
+						"condition": [],
+						"action": [
+							{
+								"dst": "custom_code",
+								"bindCondi": "",
+								"actionList": {
+									"custom_code": {
+										"inc_c": "",
+										"code_c": "// 释放rx_msg_buf内存",
+										"inc_py": "",
+										"code_py": ""
+									}
+								}
+							}
+						]
+					}
+				}
+			},
 			"style": [
 				{
 					"part": "LV_PART_MAIN",
@@ -10664,7 +10962,7 @@
 		},
 		"version": "test_v1",
 		"keyBoard": {
-			"display_kb": false,
+			"display_kb": true,
 			"chinese_input": false,
 			"chinese_library": "mini",
 			"keyboard_font_type": "SourceHanSerifSC_Regular",
@@ -20538,7 +20836,7 @@
 														]
 													},
 													{
-														"name": "btn_tx_back",
+														"name": "btn_tx_clean",
 														"id": "92bzd2nu",
 														"type": "btn",
 														"left": 230,
@@ -20550,7 +20848,7 @@
 														"height": 30,
 														"default_style": false,
 														"long_mode": "LV_LABEL_LONG_WRAP",
-														"text": "LV_SYMBOL_BACKSPACE",
+														"text": "LV_SYMBOL_TRASH",
 														"toggle": false,
 														"style": [
 															{
@@ -20723,7 +21021,7 @@
 														"dropToGap": false,
 														"event": {
 															"widget": {
-																"pressed": {
+																"released": {
 																	"condition": [],
 																	"action": [
 																		{
@@ -20736,10 +21034,6 @@
 																			}
 																		}
 																	]
-																},
-																"long_pressed": {
-																	"condition": [],
-																	"action": []
 																}
 															}
 														}
@@ -20931,29 +21225,42 @@
 															"widget": {
 																"released": {
 																	"condition": [],
-																	"action": []
+																	"action": [
+																		{
+																			"dst": "custom_code",
+																			"bindCondi": "",
+																			"actionList": {
+																				"custom_code": {
+																					"inc_c": "",
+																					"code_c": "",
+																					"inc_py": "",
+																					"code_py": ""
+																				}
+																			}
+																		}
+																	]
 																}
 															}
 														}
 													},
 													{
-														"name": "ta_rx_msg",
-														"id": "2cs77wew",
+														"name": "ta_tx_buf",
+														"id": "pu3zm1r0",
 														"type": "ta",
 														"left": 5,
-														"top": 45,
+														"top": 40,
 														"visible": true,
-														"isLock": false,
+														"isLock": true,
 														"flag": [],
-														"width": 307,
-														"height": 118,
+														"width": 310,
+														"height": 30,
 														"default_style": false,
-														"text": "Hello World",
+														"text": "AA BB CC DD EE FF AA BB CC",
 														"password_mode": false,
 														"one_line_mode": false,
 														"placeholder": "",
 														"accept_characters": "",
-														"max_len": 512,
+														"max_len": 32,
 														"password_bullet": "*",
 														"style": [
 															{
@@ -21037,14 +21344,22 @@
 																"radius": 0
 															}
 														],
+														"event": {
+															"widget": {
+																"clicked": {
+																	"condition": [],
+																	"action": []
+																}
+															}
+														},
 														"layerName": "ui_comm_can"
 													},
 													{
 														"name": "label_can_id",
 														"id": "u1dd7rhe",
 														"type": "label",
-														"left": 5,
-														"top": 178,
+														"left": 3,
+														"top": 82,
 														"visible": true,
 														"isLock": true,
 														"flag": [],
@@ -21144,7 +21459,7 @@
 														"id": "1ahs4bwa",
 														"type": "ta",
 														"left": 35,
-														"top": 170,
+														"top": 75,
 														"visible": true,
 														"isLock": true,
 														"flag": [],
@@ -21239,14 +21554,35 @@
 																"bg_opa": 255,
 																"radius": 0
 															}
-														]
+														],
+														"event": {
+															"widget": {
+																"value_changed": {
+																	"condition": [],
+																	"action": [
+																		{
+																			"dst": "custom_code",
+																			"bindCondi": "",
+																			"actionList": {
+																				"custom_code": {
+																					"inc_c": "",
+																					"code_c": "// 文本转ID",
+																					"inc_py": "",
+																					"code_py": ""
+																				}
+																			}
+																		}
+																	]
+																}
+															}
+														}
 													},
 													{
 														"name": "ddlist_ide",
 														"id": "ibul64ke",
 														"type": "ddlist",
 														"left": 106,
-														"top": 170,
+														"top": 75,
 														"visible": true,
 														"isLock": true,
 														"flag": [],
@@ -21445,14 +21781,56 @@
 																"bg_color": "#00ff00",
 																"bg_opa": 255
 															}
-														]
+														],
+														"event": {
+															"widget": {
+																"value_changed": {
+																	"condition": [
+																		{
+																			"type": "switch",
+																			"value": "id",
+																			"id": "ibul64ke",
+																			"isSystem": true,
+																			"children": [
+																				{
+																					"type": "case",
+																					"id": "ibul64ke_0",
+																					"isSystem": true,
+																					"value": 0
+																				},
+																				{
+																					"type": "case",
+																					"id": "ibul64ke_1",
+																					"isSystem": true,
+																					"value": 1
+																				}
+																			]
+																		}
+																	],
+																	"action": [
+																		{
+																			"dst": "custom_code",
+																			"bindCondi": "",
+																			"actionList": {
+																				"custom_code": {
+																					"inc_c": "",
+																					"code_c": "// ID模式",
+																					"inc_py": "",
+																					"code_py": ""
+																				}
+																			}
+																		}
+																	]
+																}
+															}
+														}
 													},
 													{
 														"name": "ddlist_rtr",
 														"id": "oatk8rh9",
 														"type": "ddlist",
 														"left": 153,
-														"top": 170,
+														"top": 75,
 														"visible": true,
 														"isLock": true,
 														"flag": [],
@@ -21651,14 +22029,56 @@
 																"bg_color": "#00ff00",
 																"bg_opa": 255
 															}
-														]
+														],
+														"event": {
+															"widget": {
+																"value_changed": {
+																	"condition": [
+																		{
+																			"type": "switch",
+																			"value": "id",
+																			"id": "oatk8rh9",
+																			"isSystem": true,
+																			"children": [
+																				{
+																					"type": "case",
+																					"id": "oatk8rh9_0",
+																					"isSystem": true,
+																					"value": 0
+																				},
+																				{
+																					"type": "case",
+																					"id": "oatk8rh9_1",
+																					"isSystem": true,
+																					"value": 1
+																				}
+																			]
+																		}
+																	],
+																	"action": [
+																		{
+																			"dst": "custom_code",
+																			"bindCondi": "",
+																			"actionList": {
+																				"custom_code": {
+																					"inc_c": "",
+																					"code_c": "// 数据/遥控帧",
+																					"inc_py": "",
+																					"code_py": ""
+																				}
+																			}
+																		}
+																	]
+																}
+															}
+														}
 													},
 													{
 														"name": "ddlist_rate",
 														"id": "2x2vhfaa",
 														"type": "ddlist",
 														"left": 200,
-														"top": 170,
+														"top": 75,
 														"visible": true,
 														"isLock": true,
 														"flag": [],
@@ -21887,14 +22307,116 @@
 																"bg_color": "#00ff00",
 																"bg_opa": 255
 															}
-														]
+														],
+														"event": {
+															"widget": {
+																"value_changed": {
+																	"condition": [
+																		{
+																			"type": "switch",
+																			"value": "id",
+																			"id": "2x2vhfaa",
+																			"isSystem": true,
+																			"children": [
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_0",
+																					"isSystem": true,
+																					"value": 0
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_1",
+																					"isSystem": true,
+																					"value": 1
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_2",
+																					"isSystem": true,
+																					"value": 2
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_3",
+																					"isSystem": true,
+																					"value": 3
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_4",
+																					"isSystem": true,
+																					"value": 4
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_5",
+																					"isSystem": true,
+																					"value": 5
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_6",
+																					"isSystem": true,
+																					"value": 6
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_7",
+																					"isSystem": true,
+																					"value": 7
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_8",
+																					"isSystem": true,
+																					"value": 8
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_9",
+																					"isSystem": true,
+																					"value": 9
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_10",
+																					"isSystem": true,
+																					"value": 10
+																				},
+																				{
+																					"type": "case",
+																					"id": "2x2vhfaa_11",
+																					"isSystem": true,
+																					"value": 11
+																				}
+																			]
+																		}
+																	],
+																	"action": [
+																		{
+																			"dst": "custom_code",
+																			"bindCondi": "",
+																			"actionList": {
+																				"custom_code": {
+																					"inc_c": "",
+																					"code_c": "// 发送波特率修改",
+																					"inc_py": "",
+																					"code_py": ""
+																				}
+																			}
+																		}
+																	]
+																}
+															}
+														}
 													},
 													{
 														"name": "ddlist_ch",
 														"id": "7f0s17vs",
 														"type": "ddlist",
 														"left": 275,
-														"top": 170,
+														"top": 75,
 														"visible": true,
 														"isLock": true,
 														"flag": [],
@@ -22093,26 +22615,68 @@
 																"bg_color": "#00ff00",
 																"bg_opa": 255
 															}
-														]
+														],
+														"event": {
+															"widget": {
+																"value_changed": {
+																	"condition": [
+																		{
+																			"type": "switch",
+																			"value": "id",
+																			"id": "7f0s17vs",
+																			"isSystem": true,
+																			"children": [
+																				{
+																					"type": "case",
+																					"id": "7f0s17vs_0",
+																					"isSystem": true,
+																					"value": 0
+																				},
+																				{
+																					"type": "case",
+																					"id": "7f0s17vs_1",
+																					"isSystem": true,
+																					"value": 1
+																				}
+																			]
+																		}
+																	],
+																	"action": [
+																		{
+																			"dst": "custom_code",
+																			"bindCondi": "",
+																			"actionList": {
+																				"custom_code": {
+																					"inc_c": "",
+																					"code_c": "",
+																					"inc_py": "",
+																					"code_py": ""
+																				}
+																			}
+																		}
+																	]
+																}
+															}
+														}
 													},
 													{
-														"name": "ta_tx_buf",
-														"id": "pu3zm1r0",
+														"name": "ta_rx_msg",
+														"id": "2cs77wew",
 														"type": "ta",
 														"left": 5,
-														"top": 205,
+														"top": 110,
 														"visible": true,
-														"isLock": true,
+														"isLock": false,
 														"flag": [],
 														"width": 310,
-														"height": 30,
+														"height": 125,
 														"default_style": false,
-														"text": "AA BB CC DD EE FF AA BB CC",
+														"text": "Hello World",
 														"password_mode": false,
 														"one_line_mode": false,
 														"placeholder": "",
 														"accept_characters": "",
-														"max_len": 32,
+														"max_len": 512,
 														"password_bullet": "*",
 														"style": [
 															{
@@ -22197,17 +22761,49 @@
 															}
 														],
 														"event": {
-															"widget": {
-																"clicked": {
-																	"condition": [],
-																	"action": []
-																}
-															}
+															"widget": {}
 														},
 														"layerName": "ui_comm_can"
 													}
 												],
-												"event": {},
+												"event": {
+													"widget": {
+														"screen_load_start": {
+															"condition": [],
+															"action": [
+																{
+																	"dst": "custom_code",
+																	"bindCondi": "",
+																	"actionList": {
+																		"custom_code": {
+																			"inc_c": "static uint32_t *ui_comm_can_rx_msg_buf;    // 申请的内存的地址指向",
+																			"code_c": "// 申请rx_msg_buf内存",
+																			"inc_py": "",
+																			"code_py": ""
+																		}
+																	}
+																}
+															]
+														},
+														"screen_unloaded": {
+															"condition": [],
+															"action": [
+																{
+																	"dst": "custom_code",
+																	"bindCondi": "",
+																	"actionList": {
+																		"custom_code": {
+																			"inc_c": "",
+																			"code_c": "// 释放rx_msg_buf内存",
+																			"inc_py": "",
+																			"code_py": ""
+																		}
+																	}
+																}
+															]
+														}
+													}
+												},
 												"style": [
 													{
 														"part": "LV_PART_MAIN",
@@ -27176,7 +27772,44 @@
 				"height": 240,
 				"visible": true,
 				"flag": [],
-				"event": {},
+				"event": {
+					"widget": {
+						"screen_load_start": {
+							"condition": [],
+							"action": [
+								{
+									"dst": "custom_code",
+									"bindCondi": "",
+									"actionList": {
+										"custom_code": {
+											"inc_c": "static uint32_t *ui_comm_can_rx_msg_buf;    // 申请的内存的地址指向",
+											"code_c": "// 申请rx_msg_buf内存",
+											"inc_py": "",
+											"code_py": ""
+										}
+									}
+								}
+							]
+						},
+						"screen_unloaded": {
+							"condition": [],
+							"action": [
+								{
+									"dst": "custom_code",
+									"bindCondi": "",
+									"actionList": {
+										"custom_code": {
+											"inc_c": "",
+											"code_c": "// 释放rx_msg_buf内存",
+											"inc_py": "",
+											"code_py": ""
+										}
+									}
+								}
+							]
+						}
+					}
+				},
 				"style": [
 					{
 						"part": "LV_PART_MAIN",
@@ -27202,34 +27835,29 @@
 				],
 				"widgets": [
 					{
-						"name": "ui_comm_can_ta_tx_buf",
-						"id": "pu3zm1r0",
+						"name": "ui_comm_can_ta_rx_msg",
+						"id": "2cs77wew",
 						"type": "ta",
 						"visible": true,
 						"flag": [],
 						"pos": [
 							5,
-							205
+							110
 						],
 						"size": [
 							310,
-							30
+							125
 						],
 						"default_style": false,
 						"event": {
-							"widget": {
-								"clicked": {
-									"condition": [],
-									"action": []
-								}
-							}
+							"widget": {}
 						},
-						"text": "AA BB CC DD EE FF AA BB CC",
+						"text": "Hello World",
 						"password_mode": false,
 						"one_line_mode": false,
 						"placeholder": "",
 						"accept_characters": "",
-						"max_len": 32,
+						"max_len": 512,
 						"password_bullet": "*",
 						"style": [
 							{
@@ -27322,13 +27950,55 @@
 						"flag": [],
 						"pos": [
 							275,
-							170
+							75
 						],
 						"size": [
 							40,
 							30
 						],
 						"default_style": false,
+						"event": {
+							"widget": {
+								"value_changed": {
+									"condition": [
+										{
+											"type": "switch",
+											"value": "id",
+											"id": "7f0s17vs",
+											"isSystem": true,
+											"children": [
+												{
+													"type": "case",
+													"id": "7f0s17vs_0",
+													"isSystem": true,
+													"value": 0
+												},
+												{
+													"type": "case",
+													"id": "7f0s17vs_1",
+													"isSystem": true,
+													"value": 1
+												}
+											]
+										}
+									],
+									"action": [
+										{
+											"dst": "custom_code",
+											"bindCondi": "",
+											"actionList": {
+												"custom_code": {
+													"inc_c": "",
+													"code_c": "",
+													"inc_py": "",
+													"code_py": ""
+												}
+											}
+										}
+									]
+								}
+							}
+						},
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -27524,13 +28194,115 @@
 						"flag": [],
 						"pos": [
 							200,
-							170
+							75
 						],
 						"size": [
 							70,
 							30
 						],
 						"default_style": false,
+						"event": {
+							"widget": {
+								"value_changed": {
+									"condition": [
+										{
+											"type": "switch",
+											"value": "id",
+											"id": "2x2vhfaa",
+											"isSystem": true,
+											"children": [
+												{
+													"type": "case",
+													"id": "2x2vhfaa_0",
+													"isSystem": true,
+													"value": 0
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_1",
+													"isSystem": true,
+													"value": 1
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_2",
+													"isSystem": true,
+													"value": 2
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_3",
+													"isSystem": true,
+													"value": 3
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_4",
+													"isSystem": true,
+													"value": 4
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_5",
+													"isSystem": true,
+													"value": 5
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_6",
+													"isSystem": true,
+													"value": 6
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_7",
+													"isSystem": true,
+													"value": 7
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_8",
+													"isSystem": true,
+													"value": 8
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_9",
+													"isSystem": true,
+													"value": 9
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_10",
+													"isSystem": true,
+													"value": 10
+												},
+												{
+													"type": "case",
+													"id": "2x2vhfaa_11",
+													"isSystem": true,
+													"value": 11
+												}
+											]
+										}
+									],
+									"action": [
+										{
+											"dst": "custom_code",
+											"bindCondi": "",
+											"actionList": {
+												"custom_code": {
+													"inc_c": "",
+													"code_c": "// 发送波特率修改",
+													"inc_py": "",
+													"code_py": ""
+												}
+											}
+										}
+									]
+								}
+							}
+						},
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -27726,13 +28498,55 @@
 						"flag": [],
 						"pos": [
 							153,
-							170
+							75
 						],
 						"size": [
 							42,
 							30
 						],
 						"default_style": false,
+						"event": {
+							"widget": {
+								"value_changed": {
+									"condition": [
+										{
+											"type": "switch",
+											"value": "id",
+											"id": "oatk8rh9",
+											"isSystem": true,
+											"children": [
+												{
+													"type": "case",
+													"id": "oatk8rh9_0",
+													"isSystem": true,
+													"value": 0
+												},
+												{
+													"type": "case",
+													"id": "oatk8rh9_1",
+													"isSystem": true,
+													"value": 1
+												}
+											]
+										}
+									],
+									"action": [
+										{
+											"dst": "custom_code",
+											"bindCondi": "",
+											"actionList": {
+												"custom_code": {
+													"inc_c": "",
+													"code_c": "// 数据/遥控帧",
+													"inc_py": "",
+													"code_py": ""
+												}
+											}
+										}
+									]
+								}
+							}
+						},
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -27928,13 +28742,55 @@
 						"flag": [],
 						"pos": [
 							106,
-							170
+							75
 						],
 						"size": [
 							42,
 							30
 						],
 						"default_style": false,
+						"event": {
+							"widget": {
+								"value_changed": {
+									"condition": [
+										{
+											"type": "switch",
+											"value": "id",
+											"id": "ibul64ke",
+											"isSystem": true,
+											"children": [
+												{
+													"type": "case",
+													"id": "ibul64ke_0",
+													"isSystem": true,
+													"value": 0
+												},
+												{
+													"type": "case",
+													"id": "ibul64ke_1",
+													"isSystem": true,
+													"value": 1
+												}
+											]
+										}
+									],
+									"action": [
+										{
+											"dst": "custom_code",
+											"bindCondi": "",
+											"actionList": {
+												"custom_code": {
+													"inc_c": "",
+													"code_c": "// ID模式",
+													"inc_py": "",
+													"code_py": ""
+												}
+											}
+										}
+									]
+								}
+							}
+						},
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -28130,13 +28986,34 @@
 						"flag": [],
 						"pos": [
 							35,
-							170
+							75
 						],
 						"size": [
 							66,
 							30
 						],
 						"default_style": false,
+						"event": {
+							"widget": {
+								"value_changed": {
+									"condition": [],
+									"action": [
+										{
+											"dst": "custom_code",
+											"bindCondi": "",
+											"actionList": {
+												"custom_code": {
+													"inc_c": "",
+													"code_c": "// 文本转ID",
+													"inc_py": "",
+													"code_py": ""
+												}
+											}
+										}
+									]
+								}
+							}
+						},
 						"text": "AAA",
 						"password_mode": false,
 						"one_line_mode": false,
@@ -28234,8 +29111,8 @@
 						"visible": true,
 						"flag": [],
 						"pos": [
-							5,
-							178
+							3,
+							82
 						],
 						"size": [
 							30,
@@ -28331,26 +29208,34 @@
 						]
 					},
 					{
-						"name": "ui_comm_can_ta_rx_msg",
-						"id": "2cs77wew",
+						"name": "ui_comm_can_ta_tx_buf",
+						"id": "pu3zm1r0",
 						"type": "ta",
 						"visible": true,
 						"flag": [],
 						"pos": [
 							5,
-							45
+							40
 						],
 						"size": [
-							307,
-							118
+							310,
+							30
 						],
 						"default_style": false,
-						"text": "Hello World",
+						"event": {
+							"widget": {
+								"clicked": {
+									"condition": [],
+									"action": []
+								}
+							}
+						},
+						"text": "AA BB CC DD EE FF AA BB CC",
 						"password_mode": false,
 						"one_line_mode": false,
 						"placeholder": "",
 						"accept_characters": "",
-						"max_len": 512,
+						"max_len": 32,
 						"password_bullet": "*",
 						"style": [
 							{
@@ -28454,7 +29339,20 @@
 							"widget": {
 								"released": {
 									"condition": [],
-									"action": []
+									"action": [
+										{
+											"dst": "custom_code",
+											"bindCondi": "",
+											"actionList": {
+												"custom_code": {
+													"inc_c": "",
+													"code_c": "",
+													"inc_py": "",
+													"code_py": ""
+												}
+											}
+										}
+									]
 								}
 							}
 						},
@@ -28632,7 +29530,7 @@
 						"toggle": false
 					},
 					{
-						"name": "ui_comm_can_btn_tx_back",
+						"name": "ui_comm_can_btn_tx_clean",
 						"id": "92bzd2nu",
 						"type": "btn",
 						"visible": true,
@@ -28648,7 +29546,7 @@
 						"default_style": false,
 						"event": {
 							"widget": {
-								"pressed": {
+								"released": {
 									"condition": [],
 									"action": [
 										{
@@ -28665,7 +29563,7 @@
 												"id": "pu3zm1r0",
 												"type": "ta",
 												"left": 5,
-												"top": 205,
+												"top": 40,
 												"visible": true,
 												"isLock": true,
 												"flag": [],
@@ -28773,10 +29671,6 @@
 											}
 										}
 									]
-								},
-								"long_pressed": {
-									"condition": [],
-									"action": []
 								}
 							}
 						},
@@ -28949,7 +29843,7 @@
 								"text_color": "#000000"
 							}
 						],
-						"text": "LV_SYMBOL_BACKSPACE",
+						"text": "LV_SYMBOL_TRASH",
 						"long_mode": "LV_LABEL_LONG_WRAP",
 						"toggle": false
 					},
@@ -29090,12 +29984,12 @@
 												"id": "2cs77wew",
 												"type": "ta",
 												"left": 5,
-												"top": 45,
+												"top": 110,
 												"visible": true,
 												"isLock": false,
 												"flag": [],
-												"width": 307,
-												"height": 118,
+												"width": 310,
+												"height": 125,
 												"default_style": false,
 												"text": "Hello World",
 												"password_mode": false,
@@ -29186,6 +30080,9 @@
 														"radius": 0
 													}
 												],
+												"event": {
+													"widget": {}
+												},
 												"layerName": "ui_comm_can"
 											}
 										},

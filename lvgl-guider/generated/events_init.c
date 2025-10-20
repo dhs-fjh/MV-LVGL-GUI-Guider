@@ -15,6 +15,7 @@
 #include "freemaster_client.h"
 #endif
 
+static uint32_t *ui_comm_can_rx_msg_buf;    // 申请的内存的地址指向
 #include <stdlib.h>
 #include <time.h>
 
@@ -255,6 +256,99 @@ void events_init_ui_comm (lv_ui *ui)
     lv_obj_add_event_cb(ui->ui_comm_btn_home, ui_comm_btn_home_event_handler, LV_EVENT_ALL, ui);
 }
 
+static void ui_comm_can_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_SCREEN_LOAD_START:
+    {
+        // 申请rx_msg_buf内存
+        break;
+    }
+    case LV_EVENT_SCREEN_UNLOADED:
+    {
+        // 释放rx_msg_buf内存
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_ddlist_ch_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        uint16_t id = lv_dropdown_get_selected(guider_ui.ui_comm_can_ddlist_ch);
+
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_ddlist_rate_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        uint16_t id = lv_dropdown_get_selected(guider_ui.ui_comm_can_ddlist_rate);
+        // 发送波特率修改
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_ddlist_rtr_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        uint16_t id = lv_dropdown_get_selected(guider_ui.ui_comm_can_ddlist_rtr);
+        // 数据/遥控帧
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_ddlist_ide_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        uint16_t id = lv_dropdown_get_selected(guider_ui.ui_comm_can_ddlist_ide);
+        // ID模式
+        break;
+    }
+    default:
+        break;
+    }
+}
+
+static void ui_comm_can_ta_can_id_event_handler (lv_event_t *e)
+{
+    lv_event_code_t code = lv_event_get_code(e);
+    switch (code) {
+    case LV_EVENT_VALUE_CHANGED:
+    {
+        // 文本转ID
+        break;
+    }
+    default:
+        break;
+    }
+}
+
 static void ui_comm_can_ta_tx_buf_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
@@ -274,6 +368,7 @@ static void ui_comm_can_btn_tx_event_handler (lv_event_t *e)
     switch (code) {
     case LV_EVENT_RELEASED:
     {
+
         break;
     }
     default:
@@ -281,17 +376,13 @@ static void ui_comm_can_btn_tx_event_handler (lv_event_t *e)
     }
 }
 
-static void ui_comm_can_btn_tx_back_event_handler (lv_event_t *e)
+static void ui_comm_can_btn_tx_clean_event_handler (lv_event_t *e)
 {
     lv_event_code_t code = lv_event_get_code(e);
     switch (code) {
-    case LV_EVENT_PRESSED:
+    case LV_EVENT_RELEASED:
     {
         lv_textarea_set_text(guider_ui.ui_comm_can_ta_tx_buf, "");
-        break;
-    }
-    case LV_EVENT_LONG_PRESSED:
-    {
         break;
     }
     default:
@@ -330,9 +421,15 @@ static void ui_comm_can_btn_back_event_handler (lv_event_t *e)
 
 void events_init_ui_comm_can (lv_ui *ui)
 {
+    lv_obj_add_event_cb(ui->ui_comm_can, ui_comm_can_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_ddlist_ch, ui_comm_can_ddlist_ch_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_ddlist_rate, ui_comm_can_ddlist_rate_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_ddlist_rtr, ui_comm_can_ddlist_rtr_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_ddlist_ide, ui_comm_can_ddlist_ide_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_ta_can_id, ui_comm_can_ta_can_id_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_can_ta_tx_buf, ui_comm_can_ta_tx_buf_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_can_btn_tx, ui_comm_can_btn_tx_event_handler, LV_EVENT_ALL, ui);
-    lv_obj_add_event_cb(ui->ui_comm_can_btn_tx_back, ui_comm_can_btn_tx_back_event_handler, LV_EVENT_ALL, ui);
+    lv_obj_add_event_cb(ui->ui_comm_can_btn_tx_clean, ui_comm_can_btn_tx_clean_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_can_btn_rx_clean, ui_comm_can_btn_rx_clean_event_handler, LV_EVENT_ALL, ui);
     lv_obj_add_event_cb(ui->ui_comm_can_btn_back, ui_comm_can_btn_back_event_handler, LV_EVENT_ALL, ui);
 }

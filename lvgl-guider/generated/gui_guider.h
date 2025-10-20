@@ -69,18 +69,18 @@ typedef struct
 	lv_obj_t *ui_comm_btn_home_label;
 	lv_obj_t *ui_comm_can;
 	bool ui_comm_can_del;
-	lv_obj_t *ui_comm_can_ta_tx_buf;
+	lv_obj_t *ui_comm_can_ta_rx_msg;
 	lv_obj_t *ui_comm_can_ddlist_ch;
 	lv_obj_t *ui_comm_can_ddlist_rate;
 	lv_obj_t *ui_comm_can_ddlist_rtr;
 	lv_obj_t *ui_comm_can_ddlist_ide;
 	lv_obj_t *ui_comm_can_ta_can_id;
 	lv_obj_t *ui_comm_can_label_can_id;
-	lv_obj_t *ui_comm_can_ta_rx_msg;
+	lv_obj_t *ui_comm_can_ta_tx_buf;
 	lv_obj_t *ui_comm_can_btn_tx;
 	lv_obj_t *ui_comm_can_btn_tx_label;
-	lv_obj_t *ui_comm_can_btn_tx_back;
-	lv_obj_t *ui_comm_can_btn_tx_back_label;
+	lv_obj_t *ui_comm_can_btn_tx_clean;
+	lv_obj_t *ui_comm_can_btn_tx_clean_label;
 	lv_obj_t *ui_comm_can_label_tittle;
 	lv_obj_t *ui_comm_can_btn_rx_clean;
 	lv_obj_t *ui_comm_can_btn_rx_clean_label;
@@ -139,6 +139,7 @@ typedef struct
 	lv_obj_t *ui_led_label_title;
 	lv_obj_t *ui_led_btn_home;
 	lv_obj_t *ui_led_btn_home_label;
+	lv_obj_t *g_kb_top_layer;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -172,6 +173,7 @@ void setup_scr_ui_io(lv_ui *ui);
 void setup_scr_ui_led(lv_ui *ui);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_SourceHanSerifSC_Regular_18)
 
 
 #ifdef __cplusplus
