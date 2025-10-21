@@ -1,10 +1,13 @@
 /**
- * @file lv_port_disp.h
- * @brief LVGL Display Driver Port for ILI9341
+ * @file lv_port_fs_templ.h
+ *
  */
 
-#ifndef LV_PORT_DISP_H
-#define LV_PORT_DISP_H
+/*Copy this file as "lv_port_fs.h" and set this value to "1" to enable content*/
+#if 1
+
+#ifndef LV_PORT_FS_TEMPL_H
+#define LV_PORT_FS_TEMPL_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,10 +29,7 @@ extern "C" {
 /**********************
  * GLOBAL PROTOTYPES
  **********************/
-/**
- * Initialize display driver
- */
-void lv_port_disp_init(void);
+void lv_port_fs_init(void);
 
 /**********************
  *      MACROS
@@ -39,4 +39,6 @@ void lv_port_disp_init(void);
 } /*extern "C"*/
 #endif
 
-#endif /*LV_PORT_DISP_H*/
+#endif /*LV_PORT_FS_TEMPL_H*/
+
+#endif /*Disable/Enable content*/

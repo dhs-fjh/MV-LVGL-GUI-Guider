@@ -193,7 +193,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+  if (htim->Instance == TIM6) {
+    extern void lv_tick_inc(uint32_t tick_period);
+    lv_tick_inc(1);  // LVGL heartbeat: 1ms tick
+  }
   /* USER CODE END Callback 1 */
 }
 

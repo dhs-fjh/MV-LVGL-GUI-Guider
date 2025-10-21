@@ -17,15 +17,6 @@ extern "C" {
 
 void custom_init(lv_ui *ui);
 
-// Wrapper to be called from setup_scr_ui_storage.c
-void custom_storage_setup(lv_ui *ui);
-
-// File system browser functions
-void custom_storage_init(lv_ui *ui);
-void custom_storage_cleanup(void);
-void custom_storage_prev_page(lv_ui *ui);
-void custom_storage_next_page(lv_ui *ui);
-
 #ifdef __cplusplus
 }
 #endif

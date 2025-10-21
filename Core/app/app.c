@@ -15,8 +15,12 @@
 #include "main.h"
 #include "tim.h"
 
-// #include "gui_guider.h"
-// #include "events_init.h"
+#include "gui_guider.h"
+#include "events_init.h"
+#include "custom.h"
+#include "lv_port_disp.h"
+#include "lv_port_indev.h"
+#include "lv_port_fs.h"
 
 
 static const hal_delay_interface_t *hal_delay = NULL;
@@ -58,21 +62,23 @@ void app_default_task(void) {
 
   touch->init(lcd->xlcd->width, lcd->xlcd->height, lcd->xlcd->dir);
 
+  // 初始化 LVGL
+  lv_init();
+  lv_port_disp_init();
+  lv_port_indev_init();
+  lv_port_fs_init(); // 初始化FATFS文件系统接口
 
-  
-  // setup_ui(&guider_ui);
-  // events_init(&guider_ui);
-
-  // lv_init();
-  // lv_port_disp_init();
-  // lv_port_indev_init();
-  // lv_port_fs_init(); // 初始化FATFS文件系统接口
+  // 初始化 GUI Guider UI
+  static lv_ui guider_ui;
+  setup_ui(&guider_ui);
+  events_init(&guider_ui);
+  // custom_init(&guider_ui);
 
   HAL_TIM_Base_Start_IT(&htim6);
 
   uint32_t last_wake = hal_delay->get_tick();
   for (;;) {
-    // lv_timer_handler();
+    lv_timer_handler();
 
     if (hal_gpio->read(KEY1_GPIO_Port, KEY1_Pin) == 1) {
       printf("KEY1 pressed, start calibration\r\n");
@@ -110,8 +116,8 @@ void app_log_task(void) {
     return;
   }
   for (;;) {
-    logger->process_queue();
-    // hal_delay->delay_ms(100);
+    // logger->process_queue();
+    hal_delay->delay_ms(100);
   }
 }
 
@@ -122,7 +128,7 @@ void app_sd_task(void) {
   // fs->create_multi_file_demo("/temp", 200); // NULL表示根目录，创建20个文件
   // fs->show_partition_info();
   // fs->demo_filesystem();
-  fs->show_directory_tree(NULL);
+  // fs->show_directory_tree(NULL);
   FS_INIT_OK = 1;
   // fs->show_all_file_contents(NULL);
   for (;;) {

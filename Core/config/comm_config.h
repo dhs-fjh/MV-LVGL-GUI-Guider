@@ -3,7 +3,7 @@
 
 // 这里是驱动程序的配置选项
 // communication
-#define USE_LOG_LITE 0
+#define USE_LOG_LITE 1
 
 #define DRIVER_CAN_ENABLED 0
 #define DRIVER_LOG_ENABLED 1

@@ -37,6 +37,12 @@ add_executable(${CMAKE_PROJECT_NAME})
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
 
+# Add LVGL library
+include(cmake/lvgl.cmake)
+
+# Add GUI Guider generated code
+include(cmake/gui_guider.cmake)
+
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
@@ -68,6 +74,14 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     src/hal/hal_gpio.c
 
     src/hal/hal_spi_sw.c
+
+    # LVGL porting layer
+    Core/lvgl/porting/lv_port_disp.c
+    Core/lvgl/porting/lv_port_indev.c
+    Core/lvgl/porting/lv_port_fs.c
+
+    # UI application layer
+    Core/ui/ui_app.c
 )
 
 # Add include paths
@@ -87,9 +101,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
     src/hal
 
-    lvgl-export/src/custom
-    lvgl-export/src/generated
-    lvgl-export/src/generated/guider_customer_fonts
+    # LVGL porting layer
+    Core/lvgl/porting
 )
 
 # Add project symbols (macros)
@@ -103,6 +116,8 @@ list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
+    lvgl
+    gui_guider
 
     # Add user defined libraries
 )

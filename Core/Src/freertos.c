@@ -51,7 +51,7 @@
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 1024 * 4,
+  .stack_size = 1024 * 10,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for LED_TASK */
@@ -72,7 +72,7 @@ const osThreadAttr_t LOG_TASK_attributes = {
 osThreadId_t LVGL_TASKHandle;
 const osThreadAttr_t LVGL_TASK_attributes = {
   .name = "LVGL_TASK",
-  .stack_size = 1024 * 4,
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 
